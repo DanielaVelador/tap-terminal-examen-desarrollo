@@ -32,8 +32,8 @@ return [
     'connections' => [
 
         'mongodb' => [
-            'driver'   => 'mongodb',
-            'dsn'      => env('DB_URI', 'mongodb://root:rootpassword@mongodb:27017'),
+            'driver' => 'mongodb',
+            'dsn' => env('DB_URI', 'mongodb://root:rootpassword@mongodb:27017'),
             'database' => env('DB_DATABASE', 'tap_db'),
         ],
 

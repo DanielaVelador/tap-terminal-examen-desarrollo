@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use MongoDB\Laravel\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use MongoDB\Laravel\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
@@ -11,6 +11,7 @@ class User extends Authenticatable implements JWTSubject
     use Notifiable;
 
     protected $connection = 'mongodb';
+
     protected $collection = 'users';
 
     protected $fillable = [
@@ -26,6 +27,7 @@ class User extends Authenticatable implements JWTSubject
     protected $hidden = [
         'password',
     ];
+
     public function profiles()
     {
         return $this->hasMany(Profile::class, '_id', 'profile_ids');
