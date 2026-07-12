@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/password/forgot', [AuthController::class, 'forgotPassword']);
 
 Route::middleware('auth:api')->group(function () {
 
