@@ -8,289 +8,3294 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost:8000/api/login",
-			"event": [
+			"name": "Auth",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							""
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@test.com\",\r\n    \"password\": \"EauJB20z9s\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:8000/api/login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"admin@test.com\",\r\n    \"password\": \"EauJB20z9s\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 16:44:46 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYxMDg1LCJleHAiOjE3ODM5NjQ2ODUsIm5iZiI6MTc4Mzk2MTA4NSwianRpIjoiRkcxeHJ5Z21BZGxDMHlYTyIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.pCYhuOaD0BzsDet6bWNQa04rYcUCbv_u5kXr73W-SqA\",\n    \"token_type\": \"bearer\",\n    \"expires_in\": 3600\n}"
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYxMDg1LCJleHAiOjE3ODM5NjQ2ODUsIm5iZiI6MTc4Mzk2MTA4NSwianRpIjoiRkcxeHJ5Z21BZGxDMHlYTyIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.pCYhuOaD0BzsDet6bWNQa04rYcUCbv_u5kXr73W-SqA",
+								"type": "text"
+							}
 						],
-						"type": "text/javascript",
-						"packages": {}
-					}
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@test.com\",\r\n    \"password\": \"EauJB20z9s\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "{{base_url}}/logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYxMDg1LCJleHAiOjE3ODM5NjQ2ODUsIm5iZiI6MTc4Mzk2MTA4NSwianRpIjoiRkcxeHJ5Z21BZGxDMHlYTyIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.pCYhuOaD0BzsDet6bWNQa04rYcUCbv_u5kXr73W-SqA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"admin@test.com\",\r\n    \"password\": \"EauJB20z9s\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 16:48:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Sesión cerrada correctamente\"\n}"
+						}
+					]
+				},
+				{
+					"name": "datos_usuario",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYxNDI3LCJleHAiOjE3ODM5NjUwMjcsIm5iZiI6MTc4Mzk2MTQyNywianRpIjoicUZMVDlhMVBaUldRNmtrSCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.jNRsO4Yj_EzfQyrCSmEPEGzdEHTRjdfjRFDTZ7HpNLs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/me",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:{{base_url}}/me",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYxNDI3LCJleHAiOjE3ODM5NjUwMjcsIm5iZiI6MTc4Mzk2MTQyNywianRpIjoicUZMVDlhMVBaUldRNmtrSCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.jNRsO4Yj_EzfQyrCSmEPEGzdEHTRjdfjRFDTZ7HpNLs",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/me",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 16:51:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Admin Test\",\n    \"email\": \"admin@test.com\",\n    \"updated_at\": \"2026-07-12T01:52:39.994000Z\",\n    \"created_at\": \"2026-07-10T16:16:43.042000Z\",\n    \"profile_ids\": [\n        \"6a512ca9ac5bbb51d40721d3\"\n    ],\n    \"id\": \"6a511aeb28c4bd58ad0e8172\"\n}"
+						}
+					]
+				},
+				{
+					"name": "password_forgot",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"  admin@test.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/password/forgot",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"password",
+								"forgot"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:password_forgot",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"  admin@test.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/password/forgot",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"password",
+										"forgot"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 16:57:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Se ha enviado una nueva contraseña a tu correo\"\n}"
+						}
+					]
+				},
+				{
+					"name": "email_is_required(422)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"  admindaniela@test.com\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/password/forgot",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"password",
+								"forgot"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:email_is_requested(422)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"  admindaniela@test.com\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/password/forgot",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"password",
+										"forgot"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 16:59:54 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": [\n        \"The email field is required.\"\n    ]\n}"
+						}
+					]
 				}
 			],
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"admin@test.com\",\r\n    \"password\": \"EauJB20z9s\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/api/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"login"
-					]
-				}
-			},
-			"response": []
+			"description": "Endpoints de autenticación y gestión de sesión. Usa JWT (JSON Web Tokens), el token debe enviarse en el header `Authorization: Bearer {token}` en todos los endpoints protegidos. Los tokens expiran a los 60 minutos."
 		},
 		{
-			"name": "http://localhost:8000/api/profiles",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTEwNDczLCJleHAiOjE3ODM5MTQwNzMsIm5iZiI6MTc4MzkxMDQ3MywianRpIjoiVHFyMTg4MUdCRzhtRDFuUyIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.uzT7JEcRPl2NQBgvcnPWjlHHaTBaetlIXXlGdAsjA70",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Vendedor\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:8000/api/profiles",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"profiles"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/api/users",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTEwNDczLCJleHAiOjE3ODM5MTQwNzMsIm5iZiI6MTc4MzkxMDQ3MywianRpIjoiVHFyMTg4MUdCRzhtRDFuUyIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.uzT7JEcRPl2NQBgvcnPWjlHHaTBaetlIXXlGdAsjA70",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "name",
-							"value": "Daniela Velador",
-							"type": "text"
-						},
-						{
-							"key": "email",
-							"value": "ldaniela.veladorj@gmail.com",
-							"type": "text"
-						},
-						{
-							"key": "phone",
-							"value": "+523141027692",
-							"type": "text"
-						},
-						{
-							"key": "profile_photo",
-							"type": "file",
-							"src": "/C:/Users/ldani/OneDrive/Imágenes/78c2417a-883e-4232-b97b-4ecb121a429c.jpg"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:8000/api/users",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/api/users/export/pdf",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTEwNDczLCJleHAiOjE3ODM5MTQwNzMsIm5iZiI6MTc4MzkxMDQ3MywianRpIjoiVHFyMTg4MUdCRzhtRDFuUyIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.uzT7JEcRPl2NQBgvcnPWjlHHaTBaetlIXXlGdAsjA70",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "name",
-							"value": "Test Telefono",
-							"type": "text"
-						},
-						{
-							"key": "email",
-							"value": "duplicado@test.com",
-							"type": "text"
-						},
-						{
-							"key": "phone",
-							"value": "+523141027692",
-							"type": "text"
-						},
-						{
-							"key": "profile_photo",
-							"type": "file",
-							"src": "/C:/Users/ldani/OneDrive/Imágenes/Ewha Womans University.jpeg"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://localhost:8000/api/users/export/pdf",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"users",
-						"export",
-						"pdf"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:8000/api/users/export/excel",
-			"event": [
+			"name": "Products",
+			"item": [
 				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"var template = `\r",
-							"<style type=\"text/css\">\r",
-							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
-							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
-							"    .tftable tr {background-color:#ffffff;}\r",
-							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
-							"    .tftable tr:hover {background-color:#e0ffff;}\r",
-							"</style>\r",
-							"\r",
-							"<table class=\"tftable\" border=\"1\">\r",
-							"    <tr>\r",
-							"        <th>No Data Available</th>\r",
-							"    </tr>\r",
-							"</table>\r",
-							"`;\r",
-							"\r",
-							"function constructVisualizerPayload() {\r",
-							"    return {}; // No data to visualize\r",
-							"}\r",
-							"\r",
-							"pm.visualizer.set(template, constructVisualizerPayload());"
+					"name": "products_list",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYyNDc0LCJleHAiOjE3ODM5NjYwNzQsIm5iZiI6MTc4Mzk2MjQ3NCwianRpIjoiYWQ2QjBiSnVOa1dudURLWCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5xwxXkI9QjmEjmbguUU8YQEac5dSauT74xvQNcV0_DE",
+								"type": "text"
+							}
 						],
-						"type": "text/javascript",
-						"packages": {}
-					}
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:products_list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYyNDc0LCJleHAiOjE3ODM5NjYwNzQsIm5iZiI6MTc4Mzk2MjQ3NCwianRpIjoiYWQ2QjBiSnVOa1dudURLWCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5xwxXkI9QjmEjmbguUU8YQEac5dSauT74xvQNcV0_DE",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/products",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 17:08:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"code\": \"PROD-0008\",\n        \"name\": \"Silla Ergonómica\",\n        \"brand\": \"HbadaOffice\",\n        \"price\": 850,\n        \"updated_at\": \"2026-07-13T05:24:29.252000Z\",\n        \"created_at\": \"2026-07-10T16:56:30.170000Z\",\n        \"id\": \"6a51243e1b7134eee90802a9\"\n    },\n    {\n        \"code\": \"PROD-0006\",\n        \"name\": \"Webcam HD\",\n        \"brand\": \"Logitech\",\n        \"price\": 45,\n        \"updated_at\": \"2026-07-10T16:56:30.169000Z\",\n        \"created_at\": \"2026-07-10T16:56:30.169000Z\",\n        \"id\": \"6a51243e1b7134eee90802a7\"\n    },\n    {\n        \"code\": \"PROD-0007\",\n        \"name\": \"Disco SSD 1TB\",\n        \"brand\": \"Kingston\",\n        \"price\": 95,\n        \"updated_at\": \"2026-07-10T16:56:30.169000Z\",\n        \"created_at\": \"2026-07-10T16:56:30.169000Z\",\n        \"id\": \"6a51243e1b7134eee90802a8\"\n    },\n    {\n        \"code\": \"PROD-0005\",\n        \"name\": \"Audífonos Bluetooth\",\n        \"brand\": \"Sony\",\n        \"price\": 150,\n        \"updated_at\": \"2026-07-10T16:56:30.168000Z\",\n        \"created_at\": \"2026-07-10T16:56:30.168000Z\",\n        \"id\": \"6a51243e1b7134eee90802a6\"\n    },\n    {\n        \"code\": \"PROD-0004\",\n        \"name\": \"Monitor 24 pulgadas\",\n        \"brand\": \"Samsung\",\n        \"price\": 210,\n        \"updated_at\": \"2026-07-10T16:56:30.167000Z\",\n        \"created_at\": \"2026-07-10T16:56:30.167000Z\",\n        \"id\": \"6a51243e1b7134eee90802a5\"\n    },\n    {\n        \"code\": \"PROD-0003\",\n        \"name\": \"Teclado Mecánico\",\n        \"brand\": \"Redragon\",\n        \"price\": 60,\n        \"updated_at\": \"2026-07-10T16:56:30.165000Z\",\n        \"created_at\": \"2026-07-10T16:56:30.165000Z\",\n        \"id\": \"6a51243e1b7134eee90802a4\"\n    },\n    {\n        \"code\": \"PROD-0002\",\n        \"name\": \"Mouse Inalámbrico\",\n        \"brand\": \"Logitech\",\n        \"price\": 25,\n        \"updated_at\": \"2026-07-10T16:56:30.164000Z\",\n        \"created_at\": \"2026-07-10T16:56:30.164000Z\",\n        \"id\": \"6a51243e1b7134eee90802a3\"\n    },\n    {\n        \"code\": \"PROD-0001\",\n        \"name\": \"Laptop Dell Inspiron 15\",\n        \"brand\": \"Dell\",\n        \"price\": 899,\n        \"updated_at\": \"2026-07-10T16:56:30.118000Z\",\n        \"created_at\": \"2026-07-10T16:56:30.118000Z\",\n        \"id\": \"6a51243e1b7134eee90802a2\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "create_product",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYyNDc0LCJleHAiOjE3ODM5NjYwNzQsIm5iZiI6MTc4Mzk2MjQ3NCwianRpIjoiYWQ2QjBiSnVOa1dudURLWCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5xwxXkI9QjmEjmbguUU8YQEac5dSauT74xvQNcV0_DE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Monitor Curvo 27 pulgadas\",\r\n    \"brand\": \"LG\",\r\n    \"price\": 320\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:create_product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYyNDc0LCJleHAiOjE3ODM5NjYwNzQsIm5iZiI6MTc4Mzk2MjQ3NCwianRpIjoiYWQ2QjBiSnVOa1dudURLWCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5xwxXkI9QjmEjmbguUU8YQEac5dSauT74xvQNcV0_DE",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Monitor Curvo 27 pulgadas\",\r\n    \"brand\": \"LG\",\r\n    \"price\": 320\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/products",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 17:11:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"PROD-0010\",\n    \"name\": \"Monitor Curvo 27 pulgadas\",\n    \"brand\": \"LG\",\n    \"price\": 320,\n    \"updated_at\": \"2026-07-13T17:11:25.055000Z\",\n    \"created_at\": \"2026-07-13T17:11:25.055000Z\",\n    \"id\": \"6a551c3d420e8ba4810bc853\"\n}"
+						}
+					]
+				},
+				{
+					"name": "error_PriceExceeds3Digits(422)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYyNDc0LCJleHAiOjE3ODM5NjYwNzQsIm5iZiI6MTc4Mzk2MjQ3NCwianRpIjoiYWQ2QjBiSnVOa1dudURLWCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5xwxXkI9QjmEjmbguUU8YQEac5dSauT74xvQNcV0_DE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Samung Galaxy S25 Ultra 256 GB\",\r\n    \"brand\": \"Samsung\",\r\n    \"price\": 1500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:error_PriceExceeds3Digits(422)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYyNDc0LCJleHAiOjE3ODM5NjYwNzQsIm5iZiI6MTc4Mzk2MjQ3NCwianRpIjoiYWQ2QjBiSnVOa1dudURLWCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5xwxXkI9QjmEjmbguUU8YQEac5dSauT74xvQNcV0_DE",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Samung Galaxy S25 Ultra 256 GB\",\r\n    \"brand\": \"Samsung\",\r\n    \"price\": 1500\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/products",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 17:16:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"price\": [\n        \"The price field must not be greater than 999.\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "error_MissingRequiredFields(422)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYyNDc0LCJleHAiOjE3ODM5NjYwNzQsIm5iZiI6MTc4Mzk2MjQ3NCwianRpIjoiYWQ2QjBiSnVOa1dudURLWCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5xwxXkI9QjmEjmbguUU8YQEac5dSauT74xvQNcV0_DE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Producto Incompleto\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:error_MissingRequiredFields(422)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYyNDc0LCJleHAiOjE3ODM5NjYwNzQsIm5iZiI6MTc4Mzk2MjQ3NCwianRpIjoiYWQ2QjBiSnVOa1dudURLWCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5xwxXkI9QjmEjmbguUU8YQEac5dSauT74xvQNcV0_DE",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Producto Incompleto\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/products",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 17:20:56 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"brand\": [\n        \"The brand field is required.\"\n    ],\n    \"price\": [\n        \"The price field is required.\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "product_details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYyNDc0LCJleHAiOjE3ODM5NjYwNzQsIm5iZiI6MTc4Mzk2MjQ3NCwianRpIjoiYWQ2QjBiSnVOa1dudURLWCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5xwxXkI9QjmEjmbguUU8YQEac5dSauT74xvQNcV0_DE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Producto Incompleto\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/products/6a551c3d420e8ba4810bc853",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"6a551c3d420e8ba4810bc853"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:product_details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYyNDc0LCJleHAiOjE3ODM5NjYwNzQsIm5iZiI6MTc4Mzk2MjQ3NCwianRpIjoiYWQ2QjBiSnVOa1dudURLWCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5xwxXkI9QjmEjmbguUU8YQEac5dSauT74xvQNcV0_DE",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Producto Incompleto\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/products/6a551c3d420e8ba4810bc859",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"6a551c3d420e8ba4810bc859"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 17:23:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"PROD-0010\",\n    \"name\": \"Monitor Curvo 27 pulgadas\",\n    \"brand\": \"LG\",\n    \"price\": 320,\n    \"updated_at\": \"2026-07-13T17:11:25.055000Z\",\n    \"created_at\": \"2026-07-13T17:11:25.055000Z\",\n    \"id\": \"6a551c3d420e8ba4810bc853\"\n}"
+						}
+					]
+				},
+				{
+					"name": "product_details(not_found)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYyNDc0LCJleHAiOjE3ODM5NjYwNzQsIm5iZiI6MTc4Mzk2MjQ3NCwianRpIjoiYWQ2QjBiSnVOa1dudURLWCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5xwxXkI9QjmEjmbguUU8YQEac5dSauT74xvQNcV0_DE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Producto Incompleto\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/products/6a551c3d420e8ba4810bc859",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"6a551c3d420e8ba4810bc859"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "product_details(not_found)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYyNDc0LCJleHAiOjE3ODM5NjYwNzQsIm5iZiI6MTc4Mzk2MjQ3NCwianRpIjoiYWQ2QjBiSnVOa1dudURLWCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5xwxXkI9QjmEjmbguUU8YQEac5dSauT74xvQNcV0_DE",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Producto Incompleto\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/products/6a551c3d420e8ba4810bc859",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"6a551c3d420e8ba4810bc859"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 17:26:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Producto no encontrado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "product_update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYyNDc0LCJleHAiOjE3ODM5NjYwNzQsIm5iZiI6MTc4Mzk2MjQ3NCwianRpIjoiYWQ2QjBiSnVOa1dudURLWCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5xwxXkI9QjmEjmbguUU8YQEac5dSauT74xvQNcV0_DE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Monitor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/products/6a551c3d420e8ba4810bc853",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"6a551c3d420e8ba4810bc853"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "product_update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYyNDc0LCJleHAiOjE3ODM5NjYwNzQsIm5iZiI6MTc4Mzk2MjQ3NCwianRpIjoiYWQ2QjBiSnVOa1dudURLWCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5xwxXkI9QjmEjmbguUU8YQEac5dSauT74xvQNcV0_DE",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Monitor\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/products/6a551c3d420e8ba4810bc853",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"6a551c3d420e8ba4810bc853"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 17:29:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"PROD-0010\",\n    \"name\": \"Monitor\",\n    \"brand\": \"LG\",\n    \"price\": 320,\n    \"updated_at\": \"2026-07-13T17:29:27.342000Z\",\n    \"created_at\": \"2026-07-13T17:11:25.055000Z\",\n    \"id\": \"6a551c3d420e8ba4810bc853\"\n}"
+						}
+					]
+				},
+				{
+					"name": "product_delete",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTIwMTIzLCJleHAiOjE3ODM5MjM3MjMsIm5iZiI6MTc4MzkyMDEyMywianRpIjoiRmV6dWJvWG1aWmZ1MEdSMSIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.oebqFypSf3j6PtbTrDPndqLVlXj5dmufZbcevwKvNjE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/products/6a54778e3c4cf4ed010e06e3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"6a54778e3c4cf4ed010e06e3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "{{base_url}}/products/6a54778e3c4cf4ed010e06e3",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTIwMTIzLCJleHAiOjE3ODM5MjM3MjMsIm5iZiI6MTc4MzkyMDEyMywianRpIjoiRmV6dWJvWG1aWmZ1MEdSMSIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.oebqFypSf3j6PtbTrDPndqLVlXj5dmufZbcevwKvNjE",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/products/6a54778e3c4cf4ed010e06e3",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"6a54778e3c4cf4ed010e06e3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 05:30:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Producto eliminado correctamente\"\n}"
+						}
+					]
+				},
+				{
+					"name": "export_products_pdf",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYyNDc0LCJleHAiOjE3ODM5NjYwNzQsIm5iZiI6MTc4Mzk2MjQ3NCwianRpIjoiYWQ2QjBiSnVOa1dudURLWCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5xwxXkI9QjmEjmbguUU8YQEac5dSauT74xvQNcV0_DE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/products/export/pdf",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"export",
+								"pdf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "export_products_excel",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYyNDc0LCJleHAiOjE3ODM5NjYwNzQsIm5iZiI6MTc4Mzk2MjQ3NCwianRpIjoiYWQ2QjBiSnVOa1dudURLWCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5xwxXkI9QjmEjmbguUU8YQEac5dSauT74xvQNcV0_DE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/products/export/excel",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products",
+								"export",
+								"excel"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "export_products_excel",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTYyNDc0LCJleHAiOjE3ODM5NjYwNzQsIm5iZiI6MTc4Mzk2MjQ3NCwianRpIjoiYWQ2QjBiSnVOa1dudURLWCIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5xwxXkI9QjmEjmbguUU8YQEac5dSauT74xvQNcV0_DE",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/products/export/excel",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products",
+										"export",
+										"excel"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "public"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 17:35:34 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Mon, 13 Jul 2026 17:35:34 GMT"
+								},
+								{
+									"key": "Content-Disposition",
+									"value": "attachment; filename=productos.xlsx"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+								},
+								{
+									"key": "Content-Length",
+									"value": "6768"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000q��\\G�D�Z\u0001\u0000\u0000�\u0004\u0000\u0000\u0013\u0000\u0004\u0000[Content_Types].xmlSV\u0000\u0000���N�0\u0010E�|E�-J��@\b5��\u0012*Q>`�'�UǶl���L����@�nbE�gr=��tW�d�>(k\n6�r��\u0011V*�,���)�cI�`$hk�`{\fl:�\u001a/�\u000eCBb\u0013\nV���9\u000f��\u001aBf\u001d\u001a�RZ_C�W��\u000e�\n��o���\u000bk\"���ƃM�/��Jb2\u0007\u001f��&\f�i\u001e�\r��(#?�\n<t]0pN+\u0001�\n�\u001b#QS[�J��b]�$km�\u001b\u0017~\u0012\u0018�^c\u0018�\n�#�P!�Zg��<�\u0012�:&�;r�2���y�C�\u0019)�=�R����C�u��A�~�aK��\u0013���ջ��K�ެY\r��\u001d:��޺�\t5�\u0000l��(SG���:�^��\u001eχ\u001f��Q��xH��&�v\u0019>X?c���k�*�(_�����}�>���\u000bk�\u0001PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000q��\\\u0017�78�\u0000\u0000\u0000K\u0002\u0000\u0000\u000b\u0000\u0004\u0000_rels/.relsSV\u0000\u0000���j�0\f��{\n�{���1F�^ʠ�2�\u0007�l�$���-}�y��\u0005��Î��O��v�y\u001a�;�؋Ӱ.JP��޵\u001a^��\u0003���Y\u001aű�3G�Ww�g\u001e)���>�\fqQC��D���b!�]�i$L��3���\f�2n��\u001e�o\u0006T\u000b�:Z\r�h����[��4�ი��]��\u0002yN�,ە\u000f�>�>\u000f�j\n-'\rV�)�#��EF\u0003^6��n���8q\"K��H��>_\u0019ׄ����eƏ�<⇄�Ud�v��\rT�PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000q��\\�$�V�\u0000\u0000\u0000�\u0002\u0000\u0000\u001a\u0000\u0004\u0000xl/_rels/workbook.xml.relsSV\u0000\u0000���j�0\u0010D��\n��ZvZJ)�s)�\\[�\u0003���LlIh7m��U\u001bH\u001c\b�\u0007�Ĭؙ�H���8�OL�\u0007��*J\u0010�M���\u0014|4��g\u0010��[=\u0004�\n&$��w�7\u001c4�\u001dr}$�M<)p��EJ2\u000eGME���M\u001bҨ9��ɨ�^w(We�$��\u0003�\u000bO��\n��V �)��C��\u0006_�9���J�$���/\u001a�:d\u0005G]d\u001f���WK�s��s��<\u000e�[\f\u000f�V�tB��)?���\u0016��0_!��!�\u0019�4�E�ǩ\u0019y���\u001fPK\u0003\u0004\u0014\u0000\u0000\b\b\u0000q��\\ad���\u0001\u0000\u0000E\u0003\u0000\u0000\u0010\u0000\u0004\u0000docProps/app.xmlSV\u0000\u0000�SAn�0\u0010��\u0015\u0002�1e�(\n�b�:-rhP\u0003v��ZYD(��n\u0004��/%Ê��T�fg\u0007��T���\u0015=&��Wb�(E�ބ��C%\u001e��o>��\u0018|\r.x��\tI��\u000fj�B��\u0016��\u000e�*�2ǵ�dZ�\u0016��s�\t�\u0003�e:��4��]0/\u001dz����$���k�o�d(Ύ��״\u000ef�GO�S�~Z}��Y\u0003�\u000f�\u001f�I�B�ŷ�A�伩��\u000e�K�|ҥ��R�\f8�dc݀#T�P�\b�̶`\u0013i��G�!\u0015d�䩭D�\u001b\b�8��!Y�,βs1b\u0017���\u0015�3��LJN�\b��9�\u001f�r\u0014dp-�S���#�-;���\u0016\u0012��x9O\n    <f\u0010�e|\u0013��?���E�y�rB\u000f�ဃvB?��Ǹ\u000fw�x\u0019�5�v-$��L�0\u0011�>�M.���É�멤M\u000b�����mcx1O�_���E���P.���\u001f@�\u0005PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000q��\\�{*�r\u0001\u0000\u0000\u0011\u0003\u0000\u0000\u0011\u0000\u0004\u0000docProps/core.xmlSV\u0000\u0000���N�0\u0010D�|E�+J�4��(\r\u0012 NTB�\u0015\\�����m�\u000bi�\u001e�iS\n�8E�\u0019?�\\^�:�\u0004��s�M\u0018I@\u000b#�^��jy�^��#ג�FÜt��uuV\n[\b���\u0019\u000b\u000e\u0015�$��/���\r�-(�b\u0003\r�����|3��\u0018�[S�Ŗ��N\u0019��\r �\u001c9큩\u001d�d��bD�\u000fWG�\u0014\u0014jh@���$��,�k��\u0007��-�(�,�\u0019=�cz��\u0018l�v��1\u001a������)��*�W%�T�\u0014�p�Ѹj��ڴ:�\u001dtI�y}�5��\b��)�7����H�_s��L�xŰ��y�o������e�fi�/�Y�_\u0014y~�X�X?�\t�Hm�7�\u000f{��.Pa\ra���ɓ\rwJ�\u0001�X�`�A\t^8e1<�*Z'?��\u001f�� p0G\u0011:�B�\u001a'}\u0015\u001b;�������u��C����\u000bPK\u0003\u0004\u0014\u0000\u0000\b\b\u0000q��\\s�{Y�\u0005\u0000\u0000�\u001b\u0000\u0000\u0013\u0000\u0004\u0000xl/theme/theme1.xmlSV\u0000\u0000�YOo�6\u0014��S\u0010���l)u�:E��햦\r\u0012�C��DK�)Q 餾\r�q��aݰˀ�v\u0018�\u0015h�]�O����\u0001�\n{�c���4i3lC�-������Q�z�A��!\u0011��c9�\u001b\u0016\"��\u0003��\u001d��pp�m!�p\u0012`�\u0013ұfDZ�6?��7TDb��<�\u001b�cEJ�\u001b�-}���2OI\u0002kc.b�`(B;\u0010�\b���n6\u001akv�ib�\u0004����xL}��\u0019Kksμ��+Q2��8�s�:E�\r&N�#g��\u0004:Ĭc���\u001f\r�\u0003e!�������?��y�^\u00101UC��\r�OIW\u0012\u0004�fN'�т�\u0019��W�\u0017��\u0005�U\\�����\u0005�\u001c�}\u001f,uV���t�\n        <5P�ʻ��\u001an\u0015��o��׻ݮ�^���xw\u0005�n��[�\n�]�U��[��Z\u0005�-�k+����5���A\u0011��d\u0005��s\u0011�\u0005d��\r#�\r��|\u0003,Q���\n�D���\u0018��b\u0000�<�X�\u0004�YJ��\u0007\\\u000f�#Aq&\u0000o\u0010��\u0014S�\\��d!�\u000b����Q�!#��W�x��)z�����g�\u000f>~����O\u0006�\u001b8\tu�}��7��?�~���f�����鯿|a\u0006*\u001d��'�?{��������\u0001�%�H�\u000fiL$�E��>��6�\u00002\u0012�\u0018F�V(p\u0004H\u0003���\n��\f3\u0013�K�λ+�\u0000��ק�+�\u001eDb��\u0001�\u0013�\u0015�.�˅ќ�L�n�4\t���T��c|h��;\u0011��4��LM,{\u0011���� �8$\tQ([�\u0013B\fd�(��u���K>V�\u001eE]L�.\u0019ґ2\u0013ݠ1�efR\u0010B]���]����~�\u001cV��\u0010��X\u0012Vq�u\n            <U86j�c�#ob\u0015��<�\t��p� �!a\u001c�\u0003\"��涘U���P��a�e���\u0014�NLț�s\u001d��'�\bǩQg�D:�C9�-��\u001eWF%x5C�1�\u0001'��K�:_Zߡad� ��T�R��j>��\u0018����J\u001d�䴲�(���e{\u000e߂C̔<'�u\u001d�X���4�#�\u0015�+��\n�.V�\\����,Ŷ�k�l���{L\u0019;P3Fnʼ�K0/\u0018�d>ȉ\u0016}~\u001a�c)��\u000b\u0005Ο���c���\b� ��%��d\u001dJ�r\t�\u000b��w~E�`s>���j�\u0007�tK�o.��P�Z\u0019��\nk]y;aN\u0001<�4�3K�N�fkބ�A8{��5\u000bѰQ0#A����<,\u0017\u001e\"\u0019န1r��8�3���z�i��[o'�,A�Ź5�\u000b�Rc%J�j:��:BG����,��c����8\u0005~2+U��I��Ui�k�����m�4j\r��H�T�XF\u0005U�4\u001d�,�ozn懋1�P�ΦE����Z�'CK�c⫚��\\�SE�A\u0014\u001c�\u0011��}\fz���\n����9\u001f\b�P��x��/���k�2;0K#\\֤�\u0016�\u0002�?/t�G�zv��ohJ�\u0002M��]S��\u000b\rn+ȯ^�\u0006\b��=ڱ�P\u0011�*�F�\u001f\bh\u001crY�\u0017���TB,{���J\u000e�u��Q\u0014�0R�4D�B�S� dO�v�������9���,ԕi�;\"��\r��]��P4�&�#r�ɠ٦�\u001a���p���t>��\u0007KA�yz\u0011W+��Q��v*��m�-nzg>jS����\u000b\n7\u0015>[��C�\u000f�G��\u0012�F��.�o19\u0002�ۚq\u0019���Z��]\u0013�l>5g�j�}��7w�g�w����\u0014���L>Z�3����m�\u001fM���{�\u0007p)����\u0000>��t�oPK\u0003\u0004\u0014\u0000\u0000\b\b\u0000q��\\��;l�\u0001\u0000\u0000\u0004\u0004\u0000\u0000\u0014\u0000\u0004\u0000xl/sharedStrings.xmlSV\u0000\u0000uSAn�0\u0010��\u0015\u000b�\u0013Qvb\u0007������h�\u0004���ij-\u0013�vU�*���\u0001=�\t�X\u0019\u0014A\u0000�:j\u0006;�3\u001c\u0015��[\u000b��yô\u0016��\u0014���6Ԭ����Ʌ\u0000\u001f\u0014��2�Z<�\u0017����\u0000q��Z\u001cB�VY��\u0001[�O�C�̞]�B�tM�;���\u0007���l&�\"k�!\u0001=��=^sOa-�sQ\u0016ޔE(��cm\u001a.�P\u0016�+�\u000f�����\u0018�WN�1��P�D�\u0006�AA���A�\fGJ�\u001e�\u0013)s�la2��\u0018��\n                <F�y&���l\u0001�r��\u0013\u001b�Ř�\u0018k\u0015|r\r�plM��v�j���\u001b�d�������bjiB���V-�V�1nL�qM)-�De�f�l*ȷWc�k�\u000f<\u0015�\n                    <\u001f\u0013\u001f�z��gb\u000fW���\u001c�S6L�S�g\u0013�\u0007�3�z��$}��Z�S3%9\u001f\u0013[�V�\f���\u00172:��\u0013�N5Ӯg鑽G�B�\u000e/����|\u001bMju���\u001dThm\u0014�qL�'����X\u0016��/PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000q��\\=�%\u001d�\u0001\u0000\u0000�\u0003\u0000\u0000\r\u0000\u0004\u0000xl/styles.xmlSV\u0000\u0000�SM��0\f��W\u0018߻N\u0006Z�%��\u0016\u0002=t)�\u0014zub%c�/le���׎3�\f��\\��$=ɲR=]�\"g�AZS��\u0004Lo�4cM\u001d���(\tȍ��\u001a��\f�>5婢���\u0013\u0000���\u0018\u001c��y\b��@\u0013iBMO�П@��`\u001d��\u0019��\u001c��G\u0016b\u000e\u0017!)i�\u000eE�i.\rm*3�Vc ��\fִ���\u0006k6���h����ZC�\u000e\u0007��\u000f�)c\u0013���f�,��[e=�cWӶ-�/ц�U�\u001bW��2�,\u0017^�\u0010ېJ��:�L4���M\u001b\r����`k���D������.a9b��z\u0011\u001fo?�L5��\u0001c���)�h\u001dKND�#\u0010���p�$�\u0019+��=(��^��p�}\u0019H~��\"\r���_alh�Y&\u001bI���_�^�ג����'�95�6oH��'݁o�%��D����hl�\u0017%G��hlms7���o,I�Q��TM��\u001e�$\u0015J��\u0014���\f�{����S�\"`���㍪�����L�Q?���\u001a��-t�i����?PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000q��\\JY(ȫ\u0001\u0000\u0000�\u0002\u0000\u0000\u000f\u0000\u0004\u0000xl/workbook.xmlSV\u0000\u0000�R�N�@\u0010}�WX�^l\u0010�6��T \u0014�\u0017TRx���x�޴�N����:i)O�e�������ɚj��ɻV\u001d\u001e4�B�}G�U�Wˏ�T�\t\\\u0007�;l�3�:[|�o}|\\{�XI��\u0003h񅈌q�*��[5�\u0014fu�z@\u000b|�\u0003:��>ZH\u0002�C͒\u0003\u001d\u000f�ɚ��iNk\u000b�v\u0015f�=5|ߓ�\u000b�G�.ME\"\u001aH�\u0012\u000f\u0014X-�=\u0019���� �\u001f`e�'�*\u0003�.;Jص�X���D\u001c×�L\u0006'͉�\u00177����S��@|�s�l�\b��/>�\nt�\r�`�*Q\u001a��d\u0012�\u000bHx\u0015�\u0018��)�\"bO��m��\u0004[rd�%�Ճa\t��o��H/�%0�:zc���Wr�\u0017�&E�D�mx���,X�N\u001b�!�5\u0019Jϭ*o�y���Z�f{[��BV���J̵�z(\u001a�H\u001e�;.E��\u001d���\u0002��2�Κ��y�˧\n�.:�*�5�so��r\"\u0019�\u001f�9\u0017����a�(�����L�?��\u000fPK\u0003\u0004\u0014\u0000\u0000\b\b\u0000q��\\�M��\u0003\u0000\u0000�\f\u0000\u0000\u0018\u0000\u0004\u0000xl/worksheets/sheet1.xmlSV\u0000\u0000���n�6\u0010���\u0014��ג\u001c� ���>���\u0016\t��{MK#��$�$m'}�\u000euZ�\u0016\n]��_3��Ó�_?�ܹ\u0002\u0017��\u001b7���\u0003e�\u0012Z�7�_o�_��#$)\u0013��\u00126�'\b�������w�\u0001H\u0007\u0003�DEb\u0014+\u000e\u0002�\u0015\\e,��ͤ�V�'�\f\n\"&��\u0012���H��'Ї$u�\"���?�\nB�6���Ҕ�p`�R6A8�DbN\"���}$��%��0��GC\n                    <4J\u001f/\b��\u00154�L�TNbV�h�YF^d��Q�\u000b\u0004\u001f1\fLS\u0011�ɫ ��R}�p\u0015�͉�T~ֱ\\��W��%��c\u001d1/\u0012kI������H�um{��5�Ȝ���\u001dq)\u0010�s\u00079���s;�\u000b=gR\u0019�����\u0012��U���n�߃�1��'�\u0017S�\t��Hrz�\u001cb\tI\u001d[-�\u0013c�J��&\\�\"c�?8M~ \u000e.U�/�\u0018_�m��o�\tn\u000b十�Xjt�?W�C�+\bt���������\u001d�c]\n�<��\\r��|�6�p\u0012�N;7?�\n���\u0014ߴ!��uI\u001f�$�5g7�7�W\u0011���\f�ceT�\u0018]`�����\u0015��V��Z`j{]���A�\u001eL��ka�y�؃N\u0007A����\u0002յ�\u0005�k\u000b\u000bt� N�ď��r\u0018�a\u0010�As�,H]\u000b�\u0011��h���\u0001�٘��t�3\u001c�\fuO�D;C\f-PC��p\b��Z�c8�s6�9�=���\f�*��\u0010�\u0016�)��9\u001b�9\u001f��v�u�^j{C�\u000b?o��.�|\u0004�b\u0010t�\u000fg�۝!Z�bo�֪8,Z~\u001bt1\u0002t9\b�ԇ���!�\u001b�\u0010�\u001d�l�\b�s9�3\u001a��Ѭu�3DkY���I�`��h\u0004g�\u000f\u001f��~*�\u001d��zw�\u001b��q�7�Sdex4��p=튪8-�SU?ǜ�+7%��;����l�a��*r�?\t?S��!Eş���ͅY�%��\u0016��\u0013��\u0015]/��n��C4eLv�6.\u000et���T�_�Pߞ�S|<�oƍ���8�1Q\u000f���dS*�Xc���4�Y�U��x=n�n�[\u0006�\u0013>�՘\r�c\r�$4M��XOIr�B��C/\n                        <R.do�\u0011~R��\u0003�{����Kekg����*I��\u000bV@kc�\u0019�1wm|T���zG�{\u0007��*����՝����\u0013�]K��|&\\\n'f�R��\u001a��O��\u000fPK\u0003\u0004\u0014\u0000\u0000\b\b\u0000q��\\�KR\"x\u0000\u0000\u0000�\u0000\u0000\u0000#\u0000\u0004\u0000xl/worksheets/_rels/sheet1.xml.relsSV\u0000\u0000M�1\u000e\u0002!\u0010\u0000{_A��@\u000bc�q��\u0000�\u000f�p+\u0010a!,1�{)-'��y����$\u0016�p�\f(bW�����~ݟAIG�0\u0015&\u000b_\u0012X��|��}4\u0012b\u00155&,\u0016B�����@\u0019e*�x�gi\u0019���uE�BO�h�I��\u0007��\u0007PK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000q��\\G�D�Z\u0001\u0000\u0000�\u0004\u0000\u0000\u0013\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000\u0000\u0000\u0000\u0000[Content_Types].xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000q��\\\u0017�78�\u0000\u0000\u0000K\u0002\u0000\u0000\u000b\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u0001\u0000\u0000_rels/.relsPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000q��\\�$�V�\u0000\u0000\u0000�\u0002\u0000\u0000\u001a\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u0002\u0000\u0000xl/_rels/workbook.xml.relsPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000q��\\ad���\u0001\u0000\u0000E\u0003\u0000\u0000\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u0003\u0000\u0000docProps/app.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000q��\\�{*�r\u0001\u0000\u0000\u0011\u0003\u0000\u0000\u0011\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u0005\u0000\u0000docProps/core.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000q��\\s�{Y�\u0005\u0000\u0000�\u001b\u0000\u0000\u0013\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000'\u0007\u0000\u0000xl/theme/theme1.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000q��\\��;l�\u0001\u0000\u0000\u0004\u0004\u0000\u0000\u0014\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000\u0017\r\u0000\u0000xl/sharedStrings.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000q��\\=�%\u001d�\u0001\u0000\u0000�\u0003\u0000\u0000\r\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u000e\u0000\u0000xl/styles.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000q��\\JY(ȫ\u0001\u0000\u0000�\u0002\u0000\u0000\u000f\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u0010\u0000\u0000xl/workbook.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000q��\\�M��\u0003\u0000\u0000�\f\u0000\u0000\u0018\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u0012\u0000\u0000xl/worksheets/sheet1.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000q��\\�KR\"x\u0000\u0000\u0000�\u0000\u0000\u0000#\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u0016\u0000\u0000xl/worksheets/_rels/sheet1.xml.relsPK\u0005\u0006\u0000\u0000\u0000\u0000\u000b\u0000\u000b\u0000�\u0002\u0000\u0000�\u0017\u0000\u0000\u0000\u0000"
+						}
+					]
 				}
 			],
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTEwNDczLCJleHAiOjE3ODM5MTQwNzMsIm5iZiI6MTc4MzkxMDQ3MywianRpIjoiVHFyMTg4MUdCRzhtRDFuUyIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.uzT7JEcRPl2NQBgvcnPWjlHHaTBaetlIXXlGdAsjA70",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:8000/api/users/export/excel",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"users",
-						"export",
-						"excel"
-					]
-				}
-			},
-			"response": []
+			"description": "CRUD completo de productos, protegido por el middleware de autorización por secciones (`section:products`) — solo usuarios cuyo perfil tenga asignada la sección \"products\" pueden acceder. El código de producto (`PROD-XXXX`) se genera automáticamente mediante un contador atómico en MongoDB. El precio está limitado a un máximo de 3 dígitos. Incluye endpoints de exportación a PDF y Excel."
 		},
 		{
-			"name": "http://localhost:8000/api/products/6a54778e3c4cf4ed010e06e3",
-			"request": {
-				"auth": {
-					"type": "noauth"
+			"name": "Users",
+			"item": [
+				{
+					"name": "users_list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Vendedor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo_users_list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Vendedor\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/users",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 18:22:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"code\": \"USR-0002\",\n        \"name\": \"Test Telefono\",\n        \"email\": \"duplicado@test.com\",\n        \"phone\": \"+523141027692\",\n        \"profile_photo\": \"profiles/gRDmdA7E5NAvKCeNL8oZtu45stdQBBycVNEZlY8e.jpg\",\n        \"updated_at\": \"2026-07-13T03:10:21.620000Z\",\n        \"created_at\": \"2026-07-13T03:10:21.620000Z\",\n        \"id\": \"6a54571d5a344495210e92f4\"\n    },\n    {\n        \"code\": \"USR-0001\",\n        \"name\": \"Daniela Velador\",\n        \"email\": \"ldaniela.veladorj@gmail.com\",\n        \"phone\": \"+523141027692\",\n        \"profile_photo\": \"profiles/ITT2fs1UOhKpmBaK6LbThzX48dQQZ8T3mu0PjQry.jpg\",\n        \"updated_at\": \"2026-07-13T02:57:42.283000Z\",\n        \"created_at\": \"2026-07-13T02:57:42.283000Z\",\n        \"id\": \"6a5454265a344495210e92f3\"\n    },\n    {\n        \"name\": \"Usuario Prueba\",\n        \"email\": \"usuario@test.com\",\n        \"updated_at\": \"2026-07-10T17:57:43.174000Z\",\n        \"created_at\": \"2026-07-10T17:57:43.174000Z\",\n        \"id\": \"6a513297cc3ba51a780d0172\"\n    },\n    {\n        \"name\": \"Admin Test\",\n        \"email\": \"admin@test.com\",\n        \"updated_at\": \"2026-07-13T16:57:12.449000Z\",\n        \"created_at\": \"2026-07-10T16:16:43.042000Z\",\n        \"profile_ids\": [\n            \"6a512ca9ac5bbb51d40721d3\"\n        ],\n        \"id\": \"6a511aeb28c4bd58ad0e8172\"\n    }\n]"
+						}
+					]
 				},
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTIwMTIzLCJleHAiOjE3ODM5MjM3MjMsIm5iZiI6MTc4MzkyMDEyMywianRpIjoiRmV6dWJvWG1aWmZ1MEdSMSIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.oebqFypSf3j6PtbTrDPndqLVlXj5dmufZbcevwKvNjE",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "{{base_url}}/products/6a54778e3c4cf4ed010e06e3",
-					"host": [
-						"{{base_url}}"
+				{
+					"name": "user_create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Ivan Carrillo",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ivan@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+523141027693",
+									"type": "text"
+								},
+								{
+									"key": "profile_photo",
+									"type": "file",
+									"src": "/C:/Users/ldani/OneDrive/Imágenes/descarga.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "user_create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Ivan Hernadez",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "ivan@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "+523141027698",
+											"type": "text"
+										},
+										{
+											"key": "profile_photo",
+											"type": "file",
+											"src": "/C:/Users/ldani/OneDrive/Imágenes/descarga.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/users",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 18:24:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"USR-0003\",\n    \"name\": \"Ivan Hernadez\",\n    \"email\": \"ivan@gmail.com\",\n    \"phone\": \"+523141027698\",\n    \"profile_photo\": \"profiles/y5AZFincZJKkJfTEyk33pU7vATi7jRWewp93hyJK.jpg\",\n    \"updated_at\": \"2026-07-13T18:24:34.925000Z\",\n    \"created_at\": \"2026-07-13T18:24:34.925000Z\",\n    \"id\": \"6a552d62d4cb3a04aa09d8f2\"\n}"
+						}
+					]
+				},
+				{
+					"name": "user_create(email_duplicated)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Ivan Hernadez",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ivan@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+523141027698",
+									"type": "text"
+								},
+								{
+									"key": "profile_photo",
+									"type": "file",
+									"src": "/C:/Users/ldani/OneDrive/Imágenes/descarga.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:user_create(email_duplicated)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Ivan Hernadez",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "ivan@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "+523141027698",
+											"type": "text"
+										},
+										{
+											"key": "profile_photo",
+											"type": "file",
+											"src": "/C:/Users/ldani/OneDrive/Imágenes/descarga.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/users",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 18:28:32 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": [\n        \"The email has already been taken.\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "user_create(invalid_telephone)",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Ivan Lopez",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ivan@test.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "1234567",
+									"type": "text"
+								},
+								{
+									"key": "profile_photo",
+									"type": "file",
+									"src": "/C:/Users/ldani/OneDrive/Imágenes/descarga.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/users",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "user_create(invalid_telephone)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Ivan Lopez",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "ivan@test.com",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "1234567",
+											"type": "text"
+										},
+										{
+											"key": "profile_photo",
+											"type": "file",
+											"src": "/C:/Users/ldani/OneDrive/Imágenes/descarga.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/users",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 18:30:20 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"El teléfono debe incluir código de país válido, ej. +521234567890\"\n}"
+						}
+					]
+				},
+				{
+					"name": "user_details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Ivan Hernadez",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ivan@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+523141027698",
+									"type": "text"
+								},
+								{
+									"key": "profile_photo",
+									"type": "file",
+									"src": "/C:/Users/ldani/OneDrive/Imágenes/descarga.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/users/6a552d62d4cb3a04aa09d8f2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"6a552d62d4cb3a04aa09d8f2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:user_details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Ivan Hernadez",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "ivan@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "+523141027698",
+											"type": "text"
+										},
+										{
+											"key": "profile_photo",
+											"type": "file",
+											"src": "/C:/Users/ldani/OneDrive/Imágenes/descarga.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/users/6a552d62d4cb3a04aa09d8f2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"6a552d62d4cb3a04aa09d8f2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 18:32:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": \"Ivan Hernadez\",\n    \"email\": \"ivan@gmail.com\",\n    \"phone\": \"+523141027698\",\n    \"profile_photo\": \"profiles/y5AZFincZJKkJfTEyk33pU7vATi7jRWewp93hyJK.jpg\",\n    \"profiles\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "user_update",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ivan Hernandez\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/6a552d62d4cb3a04aa09d8f2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"6a552d62d4cb3a04aa09d8f2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "user_update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Ivan Hernandez\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/users/6a552d62d4cb3a04aa09d8f2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"6a552d62d4cb3a04aa09d8f2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 18:34:06 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"USR-0003\",\n    \"name\": \"Ivan Hernandez\",\n    \"email\": \"ivan@gmail.com\",\n    \"phone\": \"+523141027698\",\n    \"profile_photo\": \"profiles/y5AZFincZJKkJfTEyk33pU7vATi7jRWewp93hyJK.jpg\",\n    \"updated_at\": \"2026-07-13T18:34:05.787000Z\",\n    \"created_at\": \"2026-07-13T18:24:34.925000Z\",\n    \"id\": \"6a552d62d4cb3a04aa09d8f2\"\n}"
+						}
+					]
+				},
+				{
+					"name": "user_delete",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ivan Hernandez\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/users/6a552d62d4cb3a04aa09d8f2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"users",
+								"6a552d62d4cb3a04aa09d8f2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:user_delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Ivan Hernandez\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/users/6a552d62d4cb3a04aa09d8f2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"users",
+										"6a552d62d4cb3a04aa09d8f2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 18:35:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Usuario eliminado correctamente\"\n}"
+						}
+					]
+				},
+				{
+					"name": "export_users_pdf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Test Telefono",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "duplicado@test.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "+523141027692",
+									"type": "text"
+								},
+								{
+									"key": "profile_photo",
+									"type": "file",
+									"src": "/C:/Users/ldani/OneDrive/Imágenes/Ewha Womans University.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/users/export/pdf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"export",
+								"pdf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "export_users_excel",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `\r",
+									"<style type=\"text/css\">\r",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+									"    .tftable tr {background-color:#ffffff;}\r",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+									"    .tftable tr:hover {background-color:#e0ffff;}\r",
+									"</style>\r",
+									"\r",
+									"<table class=\"tftable\" border=\"1\">\r",
+									"    <tr>\r",
+									"        <th>No Data Available</th>\r",
+									"    </tr>\r",
+									"</table>\r",
+									"`;\r",
+									"\r",
+									"function constructVisualizerPayload() {\r",
+									"    return {}; // No data to visualize\r",
+									"}\r",
+									"\r",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
 					],
-					"path": [
-						"products",
-						"6a54778e3c4cf4ed010e06e3"
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/users/export/excel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"export",
+								"excel"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:export_users_excel",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8000/api/users/export/excel",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"users",
+										"export",
+										"excel"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "public"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 18:38:08 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Mon, 13 Jul 2026 18:38:08 GMT"
+								},
+								{
+									"key": "Content-Disposition",
+									"value": "attachment; filename=usuarios.xlsx"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+								},
+								{
+									"key": "Content-Length",
+									"value": "6487"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000Ĕ�\\G�D�Z\u0001\u0000\u0000�\u0004\u0000\u0000\u0013\u0000\u0004\u0000[Content_Types].xmlSV\u0000\u0000���N�0\u0010E�|E�-J��@\b5��\u0012*Q>`�'�UǶl���L����@�nbE�gr=��tW�d�>(k\n6�r��\u0011V*�,���)�cI�`$hk�`{\fl:�\u001a/�\u000eCBb\u0013\nV���9\u000f��\u001aBf\u001d\u001a�RZ_C�W��\u000e�\n��o���\u000bk\"���ƃM�/��Jb2\u0007\u001f��&\f�i\u001e�\r��(#?�\n<t]0pN+\u0001�\n�\u001b#QS[�J��b]�$km�\u001b\u0017~\u0012\u0018�^c\u0018�\n�#�P!�Zg��<�\u0012�:&�;r�2���y�C�\u0019)�=�R����C�u��A�~�aK��\u0013���ջ��K�ެY\r��\u001d:��޺�\t5�\u0000l��(SG���:�^��\u001eχ\u001f��Q��xH��&�v\u0019>X?c���k�*�(_�����}�>���\u000bk�\u0001PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000Ĕ�\\\u0017�78�\u0000\u0000\u0000K\u0002\u0000\u0000\u000b\u0000\u0004\u0000_rels/.relsSV\u0000\u0000���j�0\f��{\n�{���1F�^ʠ�2�\u0007�l�$���-}�y��\u0005��Î��O��v�y\u001a�;�؋Ӱ.JP��޵\u001a^��\u0003���Y\u001aű�3G�Ww�g\u001e)���>�\fqQC��D���b!�]�i$L��3���\f�2n��\u001e�o\u0006T\u000b�:Z\r�h����[��4�ი��]��\u0002yN�,ە\u000f�>�>\u000f�j\n-'\rV�)�#��EF\u0003^6��n���8q\"K��H��>_\u0019ׄ����eƏ�<⇄�Ud�v��\rT�PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000Ĕ�\\�$�V�\u0000\u0000\u0000�\u0002\u0000\u0000\u001a\u0000\u0004\u0000xl/_rels/workbook.xml.relsSV\u0000\u0000���j�0\u0010D��\n��ZvZJ)�s)�\\[�\u0003���LlIh7m��U\u001bH\u001c\b�\u0007�Ĭؙ�H���8�OL�\u0007��*J\u0010�M���\u0014|4��g\u0010��[=\u0004�\n&$��w�7\u001c4�\u001dr}$�M<)p��EJ2\u000eGME���M\u001bҨ9��ɨ�^w(We�$��\u0003�\u000bO��\n��V �)��C��\u0006_�9���J�$���/\u001a�:d\u0005G]d\u001f���WK�s��s��<\u000e�[\f\u000f�V�tB��)?���\u0016��0_!��!�\u0019�4�E�ǩ\u0019y���\u001fPK\u0003\u0004\u0014\u0000\u0000\b\b\u0000Ĕ�\\ad���\u0001\u0000\u0000E\u0003\u0000\u0000\u0010\u0000\u0004\u0000docProps/app.xmlSV\u0000\u0000�SAn�0\u0010��\u0015\u0002�1e�(\n�b�:-rhP\u0003v��ZYD(��n\u0004��/%Ê��T�fg\u0007��T���\u0015=&��Wb�(E�ބ��C%\u001e��o>��\u0018|\r.x��\tI��\u000fj�B��\u0016��\u000e�*�2ǵ�dZ�\u0016��s�\t�\u0003�e:��4��]0/\u001dz����$���k�o�d(Ύ��״\u000ef�GO�S�~Z}��Y\u0003�\u000f�\u001f�I�B�ŷ�A�伩��\u000e�K�|ҥ��R�\f8�dc݀#T�P�\b�̶`\u0013i��G�!\u0015d�䩭D�\u001b\b�8��!Y�,βs1b\u0017���\u0015�3��LJN�\b��9�\u001f�r\u0014dp-�S���#�-;���\u0016\u0012��x9O\n    <f\u0010�e|\u0013��?���E�y�rB\u000f�ဃvB?��Ǹ\u000fw�x\u0019�5�v-$��L�0\u0011�>�M.���É�멤M\u000b�����mcx1O�_���E���P.���\u001f@�\u0005PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000Ĕ�\\X�\r>r\u0001\u0000\u0000\u0011\u0003\u0000\u0000\u0011\u0000\u0004\u0000docProps/core.xmlSV\u0000\u0000��QO�0\u0014���\u0015K_�h\u0007\u0011�2f��'ML��km/P�ڦ�:���:\u0018������ӯ������U�\r�+��$\u001b1��\u0016F*�����C:#�G�%���9i����\u00106\u0017���3\u0016\u001c*�I\u0000i�\u000b;'kD�S��\u001aj�G!���4��\u0018�[Q�ņ���\u0019��\u001a�K��v��\u000eD�CJ1 헫\"@\n\n\u0015Ԡ��l��C\u0016�����\u001c%k����ѽ9��^\r��iF�$F��\u0019}z|���JwU\t e!E.\u001cp4�|�\u001bm\u001a�����G^�c�=>�Ɨ\n�m�7�7R���1 �0^�/�w�&w��\u0007R��x���4�,�Y>���꒱��n�\u0013ȁZ�n�\u001fvO�]��\n�j�+�\u0017\u001b�~\r�����\u0012�p�bx�e�N~\u0004��>>A`o\u000e\"t���1N�26vP�K\r���k{�:y��\u000fPK\u0003\u0004\u0014\u0000\u0000\b\b\u0000Ĕ�\\s�{Y�\u0005\u0000\u0000�\u001b\u0000\u0000\u0013\u0000\u0004\u0000xl/theme/theme1.xmlSV\u0000\u0000�YOo�6\u0014��S\u0010���l)u�:E��햦\r\u0012�C��DK�)Q 餾\r�q��aݰˀ�v\u0018�\u0015h�]�O����\u0001�\n{�c���4i3lC�-������Q�z�A��!\u0011��c9�\u001b\u0016\"��\u0003��\u001d��pp�m!�p\u0012`�\u0013ұfDZ�6?��7TDb��<�\u001b�cEJ�\u001b�-}���2OI\u0002kc.b�`(B;\u0010�\b���n6\u001akv�ib�\u0004����xL}��\u0019Kksμ��+Q2��8�s�:E�\r&N�#g��\u0004:Ĭc���\u001f\r�\u0003e!�������?��y�^\u00101UC��\r�OIW\u0012\u0004�fN'�т�\u0019��W�\u0017��\u0005�U\\�����\u0005�\u001c�}\u001f,uV���t�\n        <5P�ʻ��\u001an\u0015��o��׻ݮ�^���xw\u0005�n��[�\n�]�U��[��Z\u0005�-�k+����5���A\u0011��d\u0005��s\u0011�\u0005d��\r#�\r��|\u0003,Q���\n�D���\u0018��b\u0000�<�X�\u0004�YJ��\u0007\\\u000f�#Aq&\u0000o\u0010��\u0014S�\\��d!�\u000b����Q�!#��W�x��)z�����g�\u000f>~����O\u0006�\u001b8\tu�}��7��?�~���f�����鯿|a\u0006*\u001d��'�?{��������\u0001�%�H�\u000fiL$�E��>��6�\u00002\u0012�\u0018F�V(p\u0004H\u0003���\n��\f3\u0013�K�λ+�\u0000��ק�+�\u001eDb��\u0001�\u0013�\u0015�.�˅ќ�L�n�4\t���T��c|h��;\u0011��4��LM,{\u0011���� �8$\tQ([�\u0013B\fd�(��u���K>V�\u001eE]L�.\u0019ґ2\u0013ݠ1�efR\u0010B]���]����~�\u001cV��\u0010��X\u0012Vq�u\n            <U86j�c�#ob\u0015��<�\t��p� �!a\u001c�\u0003\"��涘U���P��a�e���\u0014�NLț�s\u001d��'�\bǩQg�D:�C9�-��\u001eWF%x5C�1�\u0001'��K�:_Zߡad� ��T�R��j>��\u0018����J\u001d�䴲�(���e{\u000e߂C̔<'�u\u001d�X���4�#�\u0015�+��\n�.V�\\����,Ŷ�k�l���{L\u0019;P3Fnʼ�K0/\u0018�d>ȉ\u0016}~\u001a�c)��\u000b\u0005Ο���c���\b� ��%��d\u001dJ�r\t�\u000b��w~E�`s>���j�\u0007�tK�o.��P�Z\u0019��\nk]y;aN\u0001<�4�3K�N�fkބ�A8{��5\u000bѰQ0#A����<,\u0017\u001e\"\u0019န1r��8�3���z�i��[o'�,A�Ź5�\u000b�Rc%J�j:��:BG����,��c����8\u0005~2+U��I��Ui�k�����m�4j\r��H�T�XF\u0005U�4\u001d�,�ozn懋1�P�ΦE����Z�'CK�c⫚��\\�SE�A\u0014\u001c�\u0011��}\fz���\n����9\u001f\b�P��x��/���k�2;0K#\\֤�\u0016�\u0002�?/t�G�zv��ohJ�\u0002M��]S��\u000b\rn+ȯ^�\u0006\b��=ڱ�P\u0011�*�F�\u001f\bh\u001crY�\u0017���TB,{���J\u000e�u��Q\u0014�0R�4D�B�S� dO�v�������9���,ԕi�;\"��\r��]��P4�&�#r�ɠ٦�\u001a���p���t>��\u0007KA�yz\u0011W+��Q��v*��m�-nzg>jS����\u000b\n7\u0015>[��C�\u000f�G��\u0012�F��.�o19\u0002�ۚq\u0019���Z��]\u0013�l>5g�j�}��7w�g�w����\u0014���L>Z�3����m�\u001fM���{�\u0007p)����\u0000>��t�oPK\u0003\u0004\u0014\u0000\u0000\b\b\u0000Ĕ�\\��v86\u0001\u0000\u0000�\u0002\u0000\u0000\u0014\u0000\u0004\u0000xl/sharedStrings.xmlSV\u0000\u0000}RKn�0\u0014��\u0014���NP\u0003��@EŲ�Z��ď�ȟ�vP{.���j���\u0012`c�3��F�\u0017_J�#X'�.p\u001cQ�@W�\u000b]\u0017x�YO�\u00189�4g�h(�78�(\u001fr�<\nO�+p�}�\u0011�\u0006\u0014s�iA\u0007fo�b>\\mM\\k�q�\u0000x%IBiJ\u0014\u0013\u001a�N��\u000eV��>��q�;Q�\\�O\\�&'���\u0005���\u0015#�Ũ��!���a�\u0003�Bx%�'=�{�PJ�!λV��q���|T\u00195Tl\u0002�6 ao�h�xJ�,l���N��ވ����L\u000b�,:��\u001b{X֡%y-��W��^yo�${�\r�����z�=�W������{\n                <��θ\u0012���ӅE�\u0002���Y���$���\u0007PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000Ĕ�\\=�%\u001d�\u0001\u0000\u0000�\u0003\u0000\u0000\r\u0000\u0004\u0000xl/styles.xmlSV\u0000\u0000�SM��0\f��W\u0018߻N\u0006Z�%��\u0016\u0002=t)�\u0014zub%c�/le���׎3�\f��\\��$=ɲR=]�\"g�AZS��\u0004Lo�4cM\u001d���(\tȍ��\u001a��\f�>5婢���\u0013\u0000���\u0018\u001c��y\b��@\u0013iBMO�П@��`\u001d��\u0019��\u001c��G\u0016b\u000e\u0017!)i�\u000eE�i.\rm*3�Vc ��\fִ���\u0006k6���h����ZC�\u000e\u0007��\u000f�)c\u0013���f�,��[e=�cWӶ-�/ц�U�\u001bW��2�,\u0017^�\u0010ېJ��:�L4���M\u001b\r����`k���D������.a9b��z\u0011\u001fo?�L5��\u0001c���)�h\u001dKND�#\u0010���p�$�\u0019+��=(��^��p�}\u0019H~��\"\r���_alh�Y&\u001bI���_�^�ג����'�95�6oH��'݁o�%��D����hl�\u0017%G��hlms7���o,I�Q��TM��\u001e�$\u0015J��\u0014���\f�{����S�\"`���㍪�����L�Q?���\u001a��-t�i����?PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000Ĕ�\\JY(ȫ\u0001\u0000\u0000�\u0002\u0000\u0000\u000f\u0000\u0004\u0000xl/workbook.xmlSV\u0000\u0000�R�N�@\u0010}�WX�^l\u0010�6��T \u0014�\u0017TRx���x�޴�N����:i)O�e�������ɚj��ɻV\u001d\u001e4�B�}G�U�Wˏ�T�\t\\\u0007�;l�3�:[|�o}|\\{�XI��\u0003h񅈌q�*��[5�\u0014fu�z@\u000b|�\u0003:��>ZH\u0002�C͒\u0003\u001d\u000f�ɚ��iNk\u000b�v\u0015f�=5|ߓ�\u000b�G�.ME\"\u001aH�\u0012\u000f\u0014X-�=\u0019���� �\u001f`e�'�*\u0003�.;Jص�X���D\u001c×�L\u0006'͉�\u00177����S��@|�s�l�\b��/>�\nt�\r�`�*Q\u001a��d\u0012�\u000bHx\u0015�\u0018��)�\"bO��m��\u0004[rd�%�Ճa\t��o��H/�%0�:zc���Wr�\u0017�&E�D�mx���,X�N\u001b�!�5\u0019Jϭ*o�y���Z�f{[��BV���J̵�z(\u001a�H\u001e�;.E��\u001d���\u0002��2�Κ��y�˧\n�.:�*�5�so��r\"\u0019�\u001f�9\u0017����a�(�����L�?��\u000fPK\u0003\u0004\u0014\u0000\u0000\b\b\u0000Ĕ�\\3�T�(\u0003\u0000\u0000�\b\u0000\u0000\u0018\u0000\u0004\u0000xl/worksheets/sheet1.xmlSV\u0000\u0000�V�r�0\u0010}�Wx�\u001e���3\r�&3�I��Y�k��,����_ߕ|����\u0013�=޳gWZ����`�\u001e�����p0�=��H)���߯��k�S��0�a���o�o����*\u0007�\u001e\u0012LUI\u0012\u0004K\t\n�\u001e|��j��Z�� PI\u000e\u0005Q\u0003Q\u0002G$\u0013� \u001aM�\r\u0014Ɛ�2\u0015,\u0018\r��AA(�\u0019��\u001c\u000e�e4��Hv\u0005p]�H`DcM*��j؎�Y|�$\u0007����H\\VH�\u0017F_�\n�H�D�\u0007�(ji_��\tn:u\u001e������6\u0015�9u\u0015D���\u000b�+�7\u001bʨ��\\�W$Ӈ-\u0017�l\u0018�#�E\u0012�H���2�)�Yߓ�gb�\u0019��$=�+P��\u001d0q���7�g�͵q\u0004�,h�R�{k\u000e�'!�����rb��\u001f��pP���d�\u0002\f\u0012\r��6�u#Ļ\u0001\u001fЅ�\\���S��\u0011��I�r\u0007��Y\u001c\u0016��c!8\u0015&\u001a�-�IN�g\u000f\u000b`�h�����O�&��n���N`�)dd�4湇��h\u0010�^ݚG�\u0003{6=\u0019v}������D�x&���U�JbF.�F�81N#\u0010�\u0015��x8\u000b�(+��;\u0017\u000b����F]l�b�\u0016\u000bPG+ftR��\t�zb\\l�\u0013�b�=1.vuZ�����\u0013x�\u0013�b7=1.\u0016�Z���i9�)9w�\u001b����\u0003�{9;`t:��dΉ\u001b�oz\u0007�w�\u0003��\u001e8�����ui�ao�9l\u0019a\n������'\u0010\u000fwI����-�\u0018\u0006\u0019\"�����jT�Z�ҮP�Fh-�����\u001a\u000b�\"\u0013B7F͋�v�W�\u0012�\u000b�\u0007vn���j��b�׳�\rK��\t�!\u000eaF��hg���h�sk\u001a⵴ySq�9�5��&g�ge�x)�2��k��?���>���J�[���Fu�/[sA\u0011F����\u000e�~�WӴ��p\u0007�5.�앻Y�u���]ì�\u0000�Ȍ�6�cY�\r�Zn\u0003�6��\u0013�Zy��q]_gA�g\"�\u000fPK\u0003\u0004\u0014\u0000\u0000\b\b\u0000Ĕ�\\�KR\"x\u0000\u0000\u0000�\u0000\u0000\u0000#\u0000\u0004\u0000xl/worksheets/_rels/sheet1.xml.relsSV\u0000\u0000M�1\u000e\u0002!\u0010\u0000{_A��@\u000bc�q��\u0000�\u000f�p+\u0010a!,1�{)-'��y����$\u0016�p�\f(bW�����~ݟAIG�0\u0015&\u000b_\u0012X��|��}4\u0012b\u00155&,\u0016B�����@\u0019e*�x�gi\u0019���uE�BO�h�I��\u0007��\u0007PK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000Ĕ�\\G�D�Z\u0001\u0000\u0000�\u0004\u0000\u0000\u0013\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000\u0000\u0000\u0000\u0000[Content_Types].xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000Ĕ�\\\u0017�78�\u0000\u0000\u0000K\u0002\u0000\u0000\u000b\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u0001\u0000\u0000_rels/.relsPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000Ĕ�\\�$�V�\u0000\u0000\u0000�\u0002\u0000\u0000\u001a\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u0002\u0000\u0000xl/_rels/workbook.xml.relsPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000Ĕ�\\ad���\u0001\u0000\u0000E\u0003\u0000\u0000\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u0003\u0000\u0000docProps/app.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000Ĕ�\\X�\r>r\u0001\u0000\u0000\u0011\u0003\u0000\u0000\u0011\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u0005\u0000\u0000docProps/core.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000Ĕ�\\s�{Y�\u0005\u0000\u0000�\u001b\u0000\u0000\u0013\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000'\u0007\u0000\u0000xl/theme/theme1.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000Ĕ�\\��v86\u0001\u0000\u0000�\u0002\u0000\u0000\u0014\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000\u0017\r\u0000\u0000xl/sharedStrings.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000Ĕ�\\=�%\u001d�\u0001\u0000\u0000�\u0003\u0000\u0000\r\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u000e\u0000\u0000xl/styles.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000Ĕ�\\JY(ȫ\u0001\u0000\u0000�\u0002\u0000\u0000\u000f\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000u\u0010\u0000\u0000xl/workbook.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000Ĕ�\\3�T�(\u0003\u0000\u0000�\b\u0000\u0000\u0018\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000Q\u0012\u0000\u0000xl/worksheets/sheet1.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000Ĕ�\\�KR\"x\u0000\u0000\u0000�\u0000\u0000\u0000#\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u0015\u0000\u0000xl/worksheets/_rels/sheet1.xml.relsPK\u0005\u0006\u0000\u0000\u0000\u0000\u000b\u0000\u000b\u0000�\u0002\u0000\u0000p\u0016\u0000\u0000\u0000\u0000"
+						}
 					]
 				}
-			},
-			"response": []
+			],
+			"description": "CRUD completo de usuarios, protegido por `section:users`. Incluye subida de foto de perfil (campo `profile_photo`, tipo `form-data`), validación de correo único y validación de teléfono con código de país obligatorio (usando `libphonenumber`). El endpoint de detalle (`GET /users/{id}`) devuelve los perfiles relacionados al usuario de forma anidada. Incluye endpoints de exportación a PDF y Excel."
+		},
+		{
+			"name": "Profiles",
+			"item": [
+				{
+					"name": "profiles_list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/profiles",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profiles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:profiles_list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/profiles",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"profiles"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 18:47:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"code\": \"PROF-0002\",\n        \"name\": \"Vendedor\",\n        \"section_ids\": [],\n        \"updated_at\": \"2026-07-13T05:48:47.621000Z\",\n        \"created_at\": \"2026-07-13T05:48:47.621000Z\",\n        \"id\": \"6a547c3f3c4cf4ed010e06e7\"\n    },\n    {\n        \"code\": \"PROF-0001\",\n        \"name\": \"Vendedor\",\n        \"section_ids\": [],\n        \"updated_at\": \"2026-07-13T02:53:13.649000Z\",\n        \"created_at\": \"2026-07-13T02:53:13.649000Z\",\n        \"id\": \"6a5453195a344495210e92f2\"\n    },\n    {\n        \"name\": \"Administrador\",\n        \"section_ids\": [\n            \"6a5128fde24b3ca5a6016802\",\n            \"6a5128fde24b3ca5a6016803\",\n            \"6a5128fde24b3ca5a6016804\"\n        ],\n        \"updated_at\": \"2026-07-13T02:51:57.681000Z\",\n        \"created_at\": \"2026-07-10T17:32:25.358000Z\",\n        \"id\": \"6a512ca9ac5bbb51d40721d3\"\n    },\n    {\n        \"name\": \"Administrador\",\n        \"section_ids\": [\n            null\n        ],\n        \"updated_at\": \"2026-07-10T17:31:39.941000Z\",\n        \"created_at\": \"2026-07-10T17:31:39.941000Z\",\n        \"id\": \"6a512c7b9f451b6a330721d2\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "profile_create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Desarrollador\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/profiles",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profiles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:profile_create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Desarrollador\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/profiles",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"profiles"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 18:49:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"PROF-0003\",\n    \"name\": \"Desarrollador\",\n    \"section_ids\": [],\n    \"updated_at\": \"2026-07-13T18:49:44.465000Z\",\n    \"created_at\": \"2026-07-13T18:49:44.465000Z\",\n    \"id\": \"6a553348d4cb3a04aa09d8f6\"\n}"
+						}
+					]
+				},
+				{
+					"name": "profile_details",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/profiles/6a553348d4cb3a04aa09d8f6",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profiles",
+								"6a553348d4cb3a04aa09d8f6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:profile_details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/profiles/6a553348d4cb3a04aa09d8f6",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"profiles",
+										"6a553348d4cb3a04aa09d8f6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 18:51:42 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"PROF-0003\",\n    \"name\": \"Desarrollador\",\n    \"created_at\": \"2026-07-13T18:49:44.465000Z\",\n    \"sections\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "profile_delete",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/profiles/6a512c7b9f451b6a330721d2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profiles",
+								"6a512c7b9f451b6a330721d2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:profile_delete",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/profiles/6a512c7b9f451b6a330721d2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"profiles",
+										"6a512c7b9f451b6a330721d2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 19:02:47 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Perfil eliminado correctamente\"\n}"
+						}
+					]
+				},
+				{
+					"name": "profiles_export_pdf",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/profiles/export/pdf",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profiles",
+								"export",
+								"pdf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profiles_export_excel",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/profiles/export/excel",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profiles",
+								"export",
+								"excel"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:profiles_export_excel",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTY2OTAzLCJleHAiOjE3ODM5NzA1MDMsIm5iZiI6MTc4Mzk2NjkwMywianRpIjoiY0tIWXZvQnMwUU5oeWZ1aiIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.LFCMgr8XU4d8kacuRKYozg7xWEW688uPQxJfS9vCg0E",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/profiles/export/excel",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"profiles",
+										"export",
+										"excel"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "xml",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "public"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 19:05:13 GMT"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Mon, 13 Jul 2026 19:05:13 GMT"
+								},
+								{
+									"key": "Content-Disposition",
+									"value": "attachment; filename=perfiles.xlsx"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+								},
+								{
+									"key": "Content-Length",
+									"value": "6443"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000���\\G�D�Z\u0001\u0000\u0000�\u0004\u0000\u0000\u0013\u0000\u0004\u0000[Content_Types].xmlSV\u0000\u0000���N�0\u0010E�|E�-J��@\b5��\u0012*Q>`�'�UǶl���L����@�nbE�gr=��tW�d�>(k\n6�r��\u0011V*�,���)�cI�`$hk�`{\fl:�\u001a/�\u000eCBb\u0013\nV���9\u000f��\u001aBf\u001d\u001a�RZ_C�W��\u000e�\n��o���\u000bk\"���ƃM�/��Jb2\u0007\u001f��&\f�i\u001e�\r��(#?�\n<t]0pN+\u0001�\n�\u001b#QS[�J��b]�$km�\u001b\u0017~\u0012\u0018�^c\u0018�\n�#�P!�Zg��<�\u0012�:&�;r�2���y�C�\u0019)�=�R����C�u��A�~�aK��\u0013���ջ��K�ެY\r��\u001d:��޺�\t5�\u0000l��(SG���:�^��\u001eχ\u001f��Q��xH��&�v\u0019>X?c���k�*�(_�����}�>���\u000bk�\u0001PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000���\\\u0017�78�\u0000\u0000\u0000K\u0002\u0000\u0000\u000b\u0000\u0004\u0000_rels/.relsSV\u0000\u0000���j�0\f��{\n�{���1F�^ʠ�2�\u0007�l�$���-}�y��\u0005��Î��O��v�y\u001a�;�؋Ӱ.JP��޵\u001a^��\u0003���Y\u001aű�3G�Ww�g\u001e)���>�\fqQC��D���b!�]�i$L��3���\f�2n��\u001e�o\u0006T\u000b�:Z\r�h����[��4�ი��]��\u0002yN�,ە\u000f�>�>\u000f�j\n-'\rV�)�#��EF\u0003^6��n���8q\"K��H��>_\u0019ׄ����eƏ�<⇄�Ud�v��\rT�PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000���\\�$�V�\u0000\u0000\u0000�\u0002\u0000\u0000\u001a\u0000\u0004\u0000xl/_rels/workbook.xml.relsSV\u0000\u0000���j�0\u0010D��\n��ZvZJ)�s)�\\[�\u0003���LlIh7m��U\u001bH\u001c\b�\u0007�Ĭؙ�H���8�OL�\u0007��*J\u0010�M���\u0014|4��g\u0010��[=\u0004�\n&$��w�7\u001c4�\u001dr}$�M<)p��EJ2\u000eGME���M\u001bҨ9��ɨ�^w(We�$��\u0003�\u000bO��\n��V �)��C��\u0006_�9���J�$���/\u001a�:d\u0005G]d\u001f���WK�s��s��<\u000e�[\f\u000f�V�tB��)?���\u0016��0_!��!�\u0019�4�E�ǩ\u0019y���\u001fPK\u0003\u0004\u0014\u0000\u0000\b\b\u0000���\\ad���\u0001\u0000\u0000E\u0003\u0000\u0000\u0010\u0000\u0004\u0000docProps/app.xmlSV\u0000\u0000�SAn�0\u0010��\u0015\u0002�1e�(\n�b�:-rhP\u0003v��ZYD(��n\u0004��/%Ê��T�fg\u0007��T���\u0015=&��Wb�(E�ބ��C%\u001e��o>��\u0018|\r.x��\tI��\u000fj�B��\u0016��\u000e�*�2ǵ�dZ�\u0016��s�\t�\u0003�e:��4��]0/\u001dz����$���k�o�d(Ύ��״\u000ef�GO�S�~Z}��Y\u0003�\u000f�\u001f�I�B�ŷ�A�伩��\u000e�K�|ҥ��R�\f8�dc݀#T�P�\b�̶`\u0013i��G�!\u0015d�䩭D�\u001b\b�8��!Y�,βs1b\u0017���\u0015�3��LJN�\b��9�\u001f�r\u0014dp-�S���#�-;���\u0016\u0012��x9O\n    <f\u0010�e|\u0013��?���E�y�rB\u000f�ဃvB?��Ǹ\u000fw�x\u0019�5�v-$��L�0\u0011�>�M.���É�멤M\u000b�����mcx1O�_���E���P.���\u001f@�\u0005PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000���\\xE�\u0013r\u0001\u0000\u0000\u0011\u0003\u0000\u0000\u0011\u0000\u0004\u0000docProps/core.xmlSV\u0000\u0000���N�0\u0010D�|E�+J���@�\u0006\tPO !Q\u0004Wc/�ib[�B���qڔ��8E�\u0019?�\\�l�*�\u0006��3��\u0018I@\u000b#�^���b�^��#גWFÌ���MyV\b�\u000b���\u0019\u000b\u000e\u0015�$��υ��\u0015��)�b\u00055������0��\u0018�[R�Ś/��\u0019��\u001a�K��v��\u000eD�EJ1 헫\"@\n\n\u0015Ԡ��l��}\u0016������J�\n[\u000b'�;sHo�\u001a�Mӌ�I���3����\u001cWM��\u0012@�B�\\8�h\\����4:��uAy]�\u0015��\u0018\u001a�P o���q�خ�c@&a��_f�N��\u0017sR��x���4�,��]�������n�\u0003ȞZoo�\u001fvG�]��\n�j�+�g\u001b�~\u0005�����\u0012�p�bx�e�\u000e~\u0004���?A`o\u000e\"t���1N�26�W�K\r�-�k{�:x��\u000fPK\u0003\u0004\u0014\u0000\u0000\b\b\u0000���\\s�{Y�\u0005\u0000\u0000�\u001b\u0000\u0000\u0013\u0000\u0004\u0000xl/theme/theme1.xmlSV\u0000\u0000�YOo�6\u0014��S\u0010���l)u�:E��햦\r\u0012�C��DK�)Q 餾\r�q��aݰˀ�v\u0018�\u0015h�]�O����\u0001�\n{�c���4i3lC�-������Q�z�A��!\u0011��c9�\u001b\u0016\"��\u0003��\u001d��pp�m!�p\u0012`�\u0013ұfDZ�6?��7TDb��<�\u001b�cEJ�\u001b�-}���2OI\u0002kc.b�`(B;\u0010�\b���n6\u001akv�ib�\u0004����xL}��\u0019Kksμ��+Q2��8�s�:E�\r&N�#g��\u0004:Ĭc���\u001f\r�\u0003e!�������?��y�^\u00101UC��\r�OIW\u0012\u0004�fN'�т�\u0019��W�\u0017��\u0005�U\\�����\u0005�\u001c�}\u001f,uV���t�\n        <5P�ʻ��\u001an\u0015��o��׻ݮ�^���xw\u0005�n��[�\n�]�U��[��Z\u0005�-�k+����5���A\u0011��d\u0005��s\u0011�\u0005d��\r#�\r��|\u0003,Q���\n�D���\u0018��b\u0000�<�X�\u0004�YJ��\u0007\\\u000f�#Aq&\u0000o\u0010��\u0014S�\\��d!�\u000b����Q�!#��W�x��)z�����g�\u000f>~����O\u0006�\u001b8\tu�}��7��?�~���f�����鯿|a\u0006*\u001d��'�?{��������\u0001�%�H�\u000fiL$�E��>��6�\u00002\u0012�\u0018F�V(p\u0004H\u0003���\n��\f3\u0013�K�λ+�\u0000��ק�+�\u001eDb��\u0001�\u0013�\u0015�.�˅ќ�L�n�4\t���T��c|h��;\u0011��4��LM,{\u0011���� �8$\tQ([�\u0013B\fd�(��u���K>V�\u001eE]L�.\u0019ґ2\u0013ݠ1�efR\u0010B]���]����~�\u001cV��\u0010��X\u0012Vq�u\n            <U86j�c�#ob\u0015��<�\t��p� �!a\u001c�\u0003\"��涘U���P��a�e���\u0014�NLț�s\u001d��'�\bǩQg�D:�C9�-��\u001eWF%x5C�1�\u0001'��K�:_Zߡad� ��T�R��j>��\u0018����J\u001d�䴲�(���e{\u000e߂C̔<'�u\u001d�X���4�#�\u0015�+��\n�.V�\\����,Ŷ�k�l���{L\u0019;P3Fnʼ�K0/\u0018�d>ȉ\u0016}~\u001a�c)��\u000b\u0005Ο���c���\b� ��%��d\u001dJ�r\t�\u000b��w~E�`s>���j�\u0007�tK�o.��P�Z\u0019��\nk]y;aN\u0001<�4�3K�N�fkބ�A8{��5\u000bѰQ0#A����<,\u0017\u001e\"\u0019န1r��8�3���z�i��[o'�,A�Ź5�\u000b�Rc%J�j:��:BG����,��c����8\u0005~2+U��I��Ui�k�����m�4j\r��H�T�XF\u0005U�4\u001d�,�ozn懋1�P�ΦE����Z�'CK�c⫚��\\�SE�A\u0014\u001c�\u0011��}\fz���\n����9\u001f\b�P��x��/���k�2;0K#\\֤�\u0016�\u0002�?/t�G�zv��ohJ�\u0002M��]S��\u000b\rn+ȯ^�\u0006\b��=ڱ�P\u0011�*�F�\u001f\bh\u001crY�\u0017���TB,{���J\u000e�u��Q\u0014�0R�4D�B�S� dO�v�������9���,ԕi�;\"��\r��]��P4�&�#r�ɠ٦�\u001a���p���t>��\u0007KA�yz\u0011W+��Q��v*��m�-nzg>jS����\u000b\n7\u0015>[��C�\u000f�G��\u0012�F��.�o19\u0002�ۚq\u0019���Z��]\u0013�l>5g�j�}��7w�g�w����\u0014���L>Z�3����m�\u001fM���{�\u0007p)����\u0000>��t�oPK\u0003\u0004\u0014\u0000\u0000\b\b\u0000���\\����\f\u0001\u0000\u0000Z\u0002\u0000\u0000\u0014\u0000\u0004\u0000xl/sharedStrings.xmlSV\u0000\u0000}�AN�0\u0010E���򾵓�i��T�(K@\b؛xH,���q\u0011��G��0b\u0001\n$K�?~�g4���\u000e�\r\n                <\u0019�\u0015O��3��i�]�\u001f\u001f�Ŗ3\n\n�\u001a\u001cB�?����(�\u0002�_�*އp(���\u0007�h�\u000e��yqު\u0010��\u0013t�4�\u0000�\u000e\"�2\u0017V\u0019����\b{w�\u0010��.��e���6�+E�K�%}�7�>{\u0018�\r��b\u001aX\u001b���|�q���m��R���5���\r��Ώ�$\u0013r\u0013Ӧ9K��ZNQ�Y*K湫�)n:6�\u00005�\u0007��b��\u0002�%�i��3ȕ�\u0006\r\u0005��z��\u0018�\"��V��?\u0001PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000���\\=�%\u001d�\u0001\u0000\u0000�\u0003\u0000\u0000\r\u0000\u0004\u0000xl/styles.xmlSV\u0000\u0000�SM��0\f��W\u0018߻N\u0006Z�%��\u0016\u0002=t)�\u0014zub%c�/le���׎3�\f��\\��$=ɲR=]�\"g�AZS��\u0004Lo�4cM\u001d���(\tȍ��\u001a��\f�>5婢���\u0013\u0000���\u0018\u001c��y\b��@\u0013iBMO�П@��`\u001d��\u0019��\u001c��G\u0016b\u000e\u0017!)i�\u000eE�i.\rm*3�Vc ��\fִ���\u0006k6���h����ZC�\u000e\u0007��\u000f�)c\u0013���f�,��[e=�cWӶ-�/ц�U�\u001bW��2�,\u0017^�\u0010ېJ��:�L4���M\u001b\r����`k���D������.a9b��z\u0011\u001fo?�L5��\u0001c���)�h\u001dKND�#\u0010���p�$�\u0019+��=(��^��p�}\u0019H~��\"\r���_alh�Y&\u001bI���_�^�ג����'�95�6oH��'݁o�%��D����hl�\u0017%G��hlms7���o,I�Q��TM��\u001e�$\u0015J��\u0014���\f�{����S�\"`���㍪�����L�Q?���\u001a��-t�i����?PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000���\\JY(ȫ\u0001\u0000\u0000�\u0002\u0000\u0000\u000f\u0000\u0004\u0000xl/workbook.xmlSV\u0000\u0000�R�N�@\u0010}�WX�^l\u0010�6��T \u0014�\u0017TRx���x�޴�N����:i)O�e�������ɚj��ɻV\u001d\u001e4�B�}G�U�Wˏ�T�\t\\\u0007�;l�3�:[|�o}|\\{�XI��\u0003h񅈌q�*��[5�\u0014fu�z@\u000b|�\u0003:��>ZH\u0002�C͒\u0003\u001d\u000f�ɚ��iNk\u000b�v\u0015f�=5|ߓ�\u000b�G�.ME\"\u001aH�\u0012\u000f\u0014X-�=\u0019���� �\u001f`e�'�*\u0003�.;Jص�X���D\u001c×�L\u0006'͉�\u00177����S��@|�s�l�\b��/>�\nt�\r�`�*Q\u001a��d\u0012�\u000bHx\u0015�\u0018��)�\"bO��m��\u0004[rd�%�Ճa\t��o��H/�%0�:zc���Wr�\u0017�&E�D�mx���,X�N\u001b�!�5\u0019Jϭ*o�y���Z�f{[��BV���J̵�z(\u001a�H\u001e�;.E��\u001d���\u0002��2�Κ��y�˧\n�.:�*�5�so��r\"\u0019�\u001f�9\u0017����a�(�����L�?��\u000fPK\u0003\u0004\u0014\u0000\u0000\b\b\u0000���\\з��&\u0003\u0000\u0000�\b\u0000\u0000\u0018\u0000\u0004\u0000xl/worksheets/sheet1.xmlSV\u0000\u0000�V�n�0\f}�W\u0018~o\u001c��5pR��\u0016萢��gŦc���Ir���Gɗ*�1�)\"�y\u000eI�R��cμ=HE\u0005_��`�{�c�P�[��^�\u0017_}Oi�\u0013�\u0004���\u000eʿ^~�\u000eB��\f@{H0W\u0005�\u0011,$(�{������i]̃@�\u0019�D\rD\u0001\u001c�TȜh4�.P\u0018C\u0012˔�`4\u001c΂�P^3��9\u001c\"Mi\f�\".s�\"���ƚTF\u000bհ\u001d���\u0012I\u000eX����m��|��\u0013_Nc)�H� \u0016y���*����:��yDp���My|N]9�oeq�t\u0005�fK\u0019�����x~��B�-�}ĺH�\u0014I>ӟ_&2-#�{��H��Q\u000e��Se�\t��\u0000\u0013\u0007\n                <y~�x��L\u001bG���6.����z\u0012҅�-��f�\u000b��o\n\u0007�=M��� ֐XjsZ�B�\u0019�\u001e]x�U&\u000e?$M\u001e0\u001b<�Z�P9��a%�\u001d\u0016�Sa���r\u0019q�?{X\u0001c&\u0007\f�S���p�Mbk�\u0013Xx\u0002))�F�;�k�\f&�W��\u0001���LO��>�����o�&�H��'��\u0015Č\\8\u001fcƱq�\u0004�]��_\u000e�`�i�5v�b�)�r�Q�\u0005��\n�z\u0005GN�#�b����M�\u0005ǽ�c'p�\u0011t�ˎ��}�\u0017��\nN��������~�N��_r�+9u#G\u001d���4O�q��O�f�Fvw�\u0004�nW�\u001c�BR�7�����ǰ��)����\f��@<�\u0005��O\"w\u0014c\u0018��\f\u0007��'�Q�k-\n����Bk�7Vf��X���\u0010�1j^\u0014*\u000b� \u0005�g�\u0017��\bI�հ��¯g\u0013{\u0012\u0013s\u0013�C\u001c�\u0017��jm��Dg�4�\u001biu\u0013q�/\u0019�\r��F��gm\u0013�\u0012�� Qk�$����>���J�[�M��\f_��\"����\u001d��x�&Iue�\u000e8k\\VꕻY�u���]ì�\u0000�HMjmȉe�6��r\u001b���y^\u001e��ʋE�u}�\u0005퟉�?PK\u0003\u0004\u0014\u0000\u0000\b\b\u0000���\\�KR\"x\u0000\u0000\u0000�\u0000\u0000\u0000#\u0000\u0004\u0000xl/worksheets/_rels/sheet1.xml.relsSV\u0000\u0000M�1\u000e\u0002!\u0010\u0000{_A��@\u000bc�q��\u0000�\u000f�p+\u0010a!,1�{)-'��y����$\u0016�p�\f(bW�����~ݟAIG�0\u0015&\u000b_\u0012X��|��}4\u0012b\u00155&,\u0016B�����@\u0019e*�x�gi\u0019���uE�BO�h�I��\u0007��\u0007PK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000���\\G�D�Z\u0001\u0000\u0000�\u0004\u0000\u0000\u0013\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000\u0000\u0000\u0000\u0000[Content_Types].xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000���\\\u0017�78�\u0000\u0000\u0000K\u0002\u0000\u0000\u000b\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u0001\u0000\u0000_rels/.relsPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000���\\�$�V�\u0000\u0000\u0000�\u0002\u0000\u0000\u001a\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u0002\u0000\u0000xl/_rels/workbook.xml.relsPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000���\\ad���\u0001\u0000\u0000E\u0003\u0000\u0000\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u0003\u0000\u0000docProps/app.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000���\\xE�\u0013r\u0001\u0000\u0000\u0011\u0003\u0000\u0000\u0011\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u0005\u0000\u0000docProps/core.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000���\\s�{Y�\u0005\u0000\u0000�\u001b\u0000\u0000\u0013\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000'\u0007\u0000\u0000xl/theme/theme1.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000���\\����\f\u0001\u0000\u0000Z\u0002\u0000\u0000\u0014\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000\u0017\r\u0000\u0000xl/sharedStrings.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000���\\=�%\u001d�\u0001\u0000\u0000�\u0003\u0000\u0000\r\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000Y\u000e\u0000\u0000xl/styles.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000���\\JY(ȫ\u0001\u0000\u0000�\u0002\u0000\u0000\u000f\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000K\u0010\u0000\u0000xl/workbook.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000���\\з��&\u0003\u0000\u0000�\b\u0000\u0000\u0018\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000'\u0012\u0000\u0000xl/worksheets/sheet1.xmlPK\u0001\u0002\u0003\u0006\u0014\u0000\u0000\b\b\u0000���\\�KR\"x\u0000\u0000\u0000�\u0000\u0000\u0000#\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000 \u0000\u0000\u0000�\u0015\u0000\u0000xl/worksheets/_rels/sheet1.xml.relsPK\u0005\u0006\u0000\u0000\u0000\u0000\u000b\u0000\u000b\u0000�\u0002\u0000\u0000D\u0016\u0000\u0000\u0000\u0000"
+						}
+					]
+				}
+			],
+			"description": "CRUD completo de perfiles de usuario, protegido por `section:profiles`. Cada perfil agrupa un conjunto de secciones del sistema a las que da acceso (`section_ids`). El endpoint de detalle (`GET /profiles/{id}`) devuelve las secciones relacionadas de forma anidada. Incluye endpoints de exportación a PDF y Excel."
+		},
+		{
+			"name": "Log",
+			"item": [
+				{
+					"name": "audit_logs_list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer     eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTgyMjU4LCJleHAiOjE3ODM5ODU4NTgsIm5iZiI6MTc4Mzk4MjI1OCwianRpIjoiemJsSFlVOElBQ1V4cThsVSIsInN1YiI6IjZhNTEzMjk3Y2MzYmE1MWE3ODBkMDE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.wsY5mumyQejt-dFjVgZNSQACeQ_1MvIQK-XTFEHdHL4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/logs",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"logs"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:audit_logs_list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer     eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTgyMjU4LCJleHAiOjE3ODM5ODU4NTgsIm5iZiI6MTc4Mzk4MjI1OCwianRpIjoiemJsSFlVOElBQ1V4cThsVSIsInN1YiI6IjZhNTEzMjk3Y2MzYmE1MWE3ODBkMDE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.wsY5mumyQejt-dFjVgZNSQACeQ_1MvIQK-XTFEHdHL4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/logs",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"logs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 22:38:45 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"collection_name\": \"users\",\n        \"document_id\": \"6a513297cc3ba51a780d0172\",\n        \"action\": \"updated\",\n        \"previous_data\": {\n            \"name\": \"Usuario Prueba\",\n            \"email\": \"usuario@test.com\",\n            \"updated_at\": \"2026-07-10T17:57:43.174000Z\",\n            \"created_at\": \"2026-07-10T17:57:43.174000Z\",\n            \"id\": \"6a513297cc3ba51a780d0172\"\n        },\n        \"new_data\": {\n            \"updated_at\": \"2026-07-13T19:17:17.259000Z\"\n        },\n        \"user_id\": null,\n        \"updated_at\": \"2026-07-13T19:17:17.519000Z\",\n        \"created_at\": \"2026-07-13T19:17:17.519000Z\",\n        \"id\": \"6a5539bdd4cb3a04aa09d8fc\"\n    },\n    {\n        \"collection_name\": \"profiles\",\n        \"document_id\": \"6a512c7b9f451b6a330721d2\",\n        \"action\": \"deleted\",\n        \"previous_data\": {\n            \"name\": \"Administrador\",\n            \"section_ids\": [\n                null\n            ],\n            \"updated_at\": \"2026-07-10T17:31:39.941000Z\",\n            \"created_at\": \"2026-07-10T17:31:39.941000Z\",\n            \"id\": \"6a512c7b9f451b6a330721d2\"\n        },\n        \"new_data\": null,\n        \"user_id\": \"6a511aeb28c4bd58ad0e8172\",\n        \"updated_at\": \"2026-07-13T19:02:46.971000Z\",\n        \"created_at\": \"2026-07-13T19:02:46.971000Z\",\n        \"id\": \"6a553656d4cb3a04aa09d8fb\"\n    },\n    {\n        \"collection_name\": \"profiles\",\n        \"document_id\": \"6a553348d4cb3a04aa09d8f6\",\n        \"action\": \"updated\",\n        \"previous_data\": {\n            \"code\": \"PROF-0003\",\n            \"name\": \"Desarrollador\",\n            \"section_ids\": [],\n            \"updated_at\": \"2026-07-13T18:49:44.465000Z\",\n            \"created_at\": \"2026-07-13T18:49:44.465000Z\",\n            \"id\": \"6a553348d4cb3a04aa09d8f6\"\n        },\n        \"new_data\": {\n            \"name\": \"Desarrollador 1\",\n            \"updated_at\": \"2026-07-13T18:54:15.774000Z\"\n        },\n        \"user_id\": \"6a511aeb28c4bd58ad0e8172\",\n        \"updated_at\": \"2026-07-13T18:54:15.804000Z\",\n        \"created_at\": \"2026-07-13T18:54:15.804000Z\",\n        \"id\": \"6a553457d4cb3a04aa09d8fa\"\n    },\n    {\n        \"collection_name\": \"profiles\",\n        \"document_id\": \"6a553391d4cb3a04aa09d8f8\",\n        \"action\": \"created\",\n        \"previous_data\": null,\n        \"new_data\": {\n            \"code\": \"PROF-0004\",\n            \"name\": \"Desarrollador\",\n            \"section_ids\": [],\n            \"updated_at\": \"2026-07-13T18:50:57.377000Z\",\n            \"created_at\": \"2026-07-13T18:50:57.377000Z\",\n            \"id\": \"6a553391d4cb3a04aa09d8f8\"\n        },\n        \"user_id\": \"6a511aeb28c4bd58ad0e8172\",\n        \"updated_at\": \"2026-07-13T18:50:57.408000Z\",\n        \"created_at\": \"2026-07-13T18:50:57.408000Z\",\n        \"id\": \"6a553391d4cb3a04aa09d8f9\"\n    },\n    {\n        \"collection_name\": \"profiles\",\n        \"document_id\": \"6a553348d4cb3a04aa09d8f6\",\n        \"action\": \"created\",\n        \"previous_data\": null,\n        \"new_data\": {\n            \"code\": \"PROF-0003\",\n            \"name\": \"Desarrollador\",\n            \"section_ids\": [],\n            \"updated_at\": \"2026-07-13T18:49:44.465000Z\",\n            \"created_at\": \"2026-07-13T18:49:44.465000Z\",\n            \"id\": \"6a553348d4cb3a04aa09d8f6\"\n        },\n        \"user_id\": \"6a511aeb28c4bd58ad0e8172\",\n        \"updated_at\": \"2026-07-13T18:49:44.492000Z\",\n        \"created_at\": \"2026-07-13T18:49:44.492000Z\",\n        \"id\": \"6a553348d4cb3a04aa09d8f7\"\n    },\n    {\n        \"collection_name\": \"users\",\n        \"document_id\": \"6a552d62d4cb3a04aa09d8f2\",\n        \"action\": \"deleted\",\n        \"previous_data\": {\n            \"code\": \"USR-0003\",\n            \"name\": \"Ivan Hernandez\",\n            \"email\": \"ivan@gmail.com\",\n            \"phone\": \"+523141027698\",\n            \"profile_photo\": \"profiles/y5AZFincZJKkJfTEyk33pU7vATi7jRWewp93hyJK.jpg\",\n            \"updated_at\": \"2026-07-13T18:34:05.787000Z\",\n            \"created_at\": \"2026-07-13T18:24:34.925000Z\",\n            \"id\": \"6a552d62d4cb3a04aa09d8f2\"\n        },\n        \"new_data\": null,\n        \"user_id\": \"6a511aeb28c4bd58ad0e8172\",\n        \"updated_at\": \"2026-07-13T18:35:50.647000Z\",\n        \"created_at\": \"2026-07-13T18:35:50.647000Z\",\n        \"id\": \"6a553006d4cb3a04aa09d8f5\"\n    },\n    {\n        \"collection_name\": \"users\",\n        \"document_id\": \"6a552d62d4cb3a04aa09d8f2\",\n        \"action\": \"updated\",\n        \"previous_data\": {\n            \"code\": \"USR-0003\",\n            \"name\": \"Ivan Hernadez\",\n            \"email\": \"ivan@gmail.com\",\n            \"phone\": \"+523141027698\",\n            \"profile_photo\": \"profiles/y5AZFincZJKkJfTEyk33pU7vATi7jRWewp93hyJK.jpg\",\n            \"updated_at\": \"2026-07-13T18:24:34.925000Z\",\n            \"created_at\": \"2026-07-13T18:24:34.925000Z\",\n            \"id\": \"6a552d62d4cb3a04aa09d8f2\"\n        },\n        \"new_data\": {\n            \"name\": \"Ivan Hernandez\",\n            \"updated_at\": \"2026-07-13T18:34:05.787000Z\"\n        },\n        \"user_id\": \"6a511aeb28c4bd58ad0e8172\",\n        \"updated_at\": \"2026-07-13T18:34:05.944000Z\",\n        \"created_at\": \"2026-07-13T18:34:05.944000Z\",\n        \"id\": \"6a552f9dd4cb3a04aa09d8f4\"\n    },\n    {\n        \"collection_name\": \"users\",\n        \"document_id\": \"6a552d62d4cb3a04aa09d8f2\",\n        \"action\": \"created\",\n        \"previous_data\": null,\n        \"new_data\": {\n            \"code\": \"USR-0003\",\n            \"name\": \"Ivan Hernadez\",\n            \"email\": \"ivan@gmail.com\",\n            \"phone\": \"+523141027698\",\n            \"profile_photo\": \"profiles/y5AZFincZJKkJfTEyk33pU7vATi7jRWewp93hyJK.jpg\",\n            \"updated_at\": \"2026-07-13T18:24:34.925000Z\",\n            \"created_at\": \"2026-07-13T18:24:34.925000Z\",\n            \"id\": \"6a552d62d4cb3a04aa09d8f2\"\n        },\n        \"user_id\": \"6a511aeb28c4bd58ad0e8172\",\n        \"updated_at\": \"2026-07-13T18:24:35.115000Z\",\n        \"created_at\": \"2026-07-13T18:24:35.115000Z\",\n        \"id\": \"6a552d63d4cb3a04aa09d8f3\"\n    },\n    {\n        \"collection_name\": \"products\",\n        \"document_id\": \"6a551c3d420e8ba4810bc853\",\n        \"action\": \"updated\",\n        \"previous_data\": {\n            \"code\": \"PROD-0010\",\n            \"name\": \"Monitor Curvo 27 pulgadas\",\n            \"brand\": \"LG\",\n            \"price\": 320,\n            \"updated_at\": \"2026-07-13T17:11:25.055000Z\",\n            \"created_at\": \"2026-07-13T17:11:25.055000Z\",\n            \"id\": \"6a551c3d420e8ba4810bc853\"\n        },\n        \"new_data\": {\n            \"name\": \"Monitor\",\n            \"updated_at\": \"2026-07-13T17:29:27.342000Z\"\n        },\n        \"user_id\": \"6a511aeb28c4bd58ad0e8172\",\n        \"updated_at\": \"2026-07-13T17:29:27.426000Z\",\n        \"created_at\": \"2026-07-13T17:29:27.426000Z\",\n        \"id\": \"6a552077420e8ba4810bc855\"\n    },\n    {\n        \"collection_name\": \"products\",\n        \"document_id\": \"6a551c3d420e8ba4810bc853\",\n        \"action\": \"created\",\n        \"previous_data\": null,\n        \"new_data\": {\n            \"code\": \"PROD-0010\",\n            \"name\": \"Monitor Curvo 27 pulgadas\",\n            \"brand\": \"LG\",\n            \"price\": 320,\n            \"updated_at\": \"2026-07-13T17:11:25.055000Z\",\n            \"created_at\": \"2026-07-13T17:11:25.055000Z\",\n            \"id\": \"6a551c3d420e8ba4810bc853\"\n        },\n        \"user_id\": \"6a511aeb28c4bd58ad0e8172\",\n        \"updated_at\": \"2026-07-13T17:11:25.200000Z\",\n        \"created_at\": \"2026-07-13T17:11:25.200000Z\",\n        \"id\": \"6a551c3d420e8ba4810bc854\"\n    },\n    {\n        \"collection_name\": \"users\",\n        \"document_id\": \"6a511aeb28c4bd58ad0e8172\",\n        \"action\": \"updated\",\n        \"previous_data\": {\n            \"name\": \"Admin Test\",\n            \"email\": \"admin@test.com\",\n            \"updated_at\": \"2026-07-12T01:52:39.994000Z\",\n            \"created_at\": \"2026-07-10T16:16:43.042000Z\",\n            \"profile_ids\": [\n                \"6a512ca9ac5bbb51d40721d3\"\n            ],\n            \"id\": \"6a511aeb28c4bd58ad0e8172\"\n        },\n        \"new_data\": {\n            \"updated_at\": \"2026-07-13T16:57:12.449000Z\"\n        },\n        \"user_id\": null,\n        \"updated_at\": \"2026-07-13T16:57:13.650000Z\",\n        \"created_at\": \"2026-07-13T16:57:13.650000Z\",\n        \"id\": \"6a5518e9420e8ba4810bc852\"\n    },\n    {\n        \"collection_name\": \"profiles\",\n        \"document_id\": \"6a547c3f3c4cf4ed010e06e7\",\n        \"action\": \"created\",\n        \"previous_data\": null,\n        \"new_data\": {\n            \"code\": \"PROF-0002\",\n            \"name\": \"Vendedor\",\n            \"section_ids\": [],\n            \"updated_at\": \"2026-07-13T05:48:47.621000Z\",\n            \"created_at\": \"2026-07-13T05:48:47.621000Z\",\n            \"id\": \"6a547c3f3c4cf4ed010e06e7\"\n        },\n        \"user_id\": \"6a511aeb28c4bd58ad0e8172\",\n        \"updated_at\": \"2026-07-13T05:48:47.667000Z\",\n        \"created_at\": \"2026-07-13T05:48:47.667000Z\",\n        \"id\": \"6a547c3f3c4cf4ed010e06e8\"\n    },\n    {\n        \"collection_name\": \"products\",\n        \"document_id\": \"6a54778e3c4cf4ed010e06e3\",\n        \"action\": \"deleted\",\n        \"previous_data\": {\n            \"code\": \"PROD-0009\",\n            \"name\": \"Producto de Prueba Bitácora\",\n            \"brand\": \"TestBrand\",\n            \"price\": 180,\n            \"updated_at\": \"2026-07-13T05:29:33.585000Z\",\n            \"created_at\": \"2026-07-13T05:28:46.953000Z\",\n            \"id\": \"6a54778e3c4cf4ed010e06e3\"\n        },\n        \"new_data\": null,\n        \"user_id\": \"6a511aeb28c4bd58ad0e8172\",\n        \"updated_at\": \"2026-07-13T05:30:08.766000Z\",\n        \"created_at\": \"2026-07-13T05:30:08.766000Z\",\n        \"id\": \"6a5477e03c4cf4ed010e06e6\"\n    },\n    {\n        \"collection_name\": \"products\",\n        \"document_id\": \"6a54778e3c4cf4ed010e06e3\",\n        \"action\": \"updated\",\n        \"previous_data\": {\n            \"code\": \"PROD-0009\",\n            \"name\": \"Producto de Prueba Bitácora\",\n            \"brand\": \"TestBrand\",\n            \"price\": 100,\n            \"updated_at\": \"2026-07-13T05:28:46.953000Z\",\n            \"created_at\": \"2026-07-13T05:28:46.953000Z\",\n            \"id\": \"6a54778e3c4cf4ed010e06e3\"\n        },\n        \"new_data\": {\n            \"price\": 180,\n            \"updated_at\": \"2026-07-13T05:29:33.585000Z\"\n        },\n        \"user_id\": \"6a511aeb28c4bd58ad0e8172\",\n        \"updated_at\": \"2026-07-13T05:29:33.623000Z\",\n        \"created_at\": \"2026-07-13T05:29:33.623000Z\",\n        \"id\": \"6a5477bd3c4cf4ed010e06e5\"\n    },\n    {\n        \"collection_name\": \"products\",\n        \"document_id\": \"6a54778e3c4cf4ed010e06e3\",\n        \"action\": \"created\",\n        \"previous_data\": null,\n        \"new_data\": {\n            \"code\": \"PROD-0009\",\n            \"name\": \"Producto de Prueba Bitácora\",\n            \"brand\": \"TestBrand\",\n            \"price\": 100,\n            \"updated_at\": \"2026-07-13T05:28:46.953000Z\",\n            \"created_at\": \"2026-07-13T05:28:46.953000Z\",\n            \"id\": \"6a54778e3c4cf4ed010e06e3\"\n        },\n        \"user_id\": \"6a511aeb28c4bd58ad0e8172\",\n        \"updated_at\": \"2026-07-13T05:28:47.054000Z\",\n        \"created_at\": \"2026-07-13T05:28:47.054000Z\",\n        \"id\": \"6a54778f3c4cf4ed010e06e4\"\n    },\n    {\n        \"collection_name\": \"products\",\n        \"document_id\": \"6a51243e1b7134eee90802a9\",\n        \"action\": \"updated\",\n        \"previous_data\": {\n            \"code\": \"PROD-0008\",\n            \"name\": \"Silla Ergonómica\",\n            \"brand\": \"HbadaOffice\",\n            \"price\": 999,\n            \"updated_at\": \"2026-07-10T16:56:30.170000Z\",\n            \"created_at\": \"2026-07-10T16:56:30.170000Z\",\n            \"id\": \"6a51243e1b7134eee90802a9\"\n        },\n        \"new_data\": {\n            \"price\": 850,\n            \"updated_at\": \"2026-07-13T05:24:29.252000Z\"\n        },\n        \"user_id\": \"6a511aeb28c4bd58ad0e8172\",\n        \"updated_at\": \"2026-07-13T05:24:29.387000Z\",\n        \"created_at\": \"2026-07-13T05:24:29.387000Z\",\n        \"id\": \"6a54768d3c4cf4ed010e06e2\"\n    }\n]"
+						}
+					]
+				}
+			],
+			"description": "Endpoint de solo lectura para consultar el historial de auditoría del sistema. Cada acción de creación, actualización o eliminación sobre los modelos `Product`, `User`, `Profile` y `Section` se registra automáticamente mediante un Observer (`AuditObserver`), capturando el estado anterior, el nuevo estado (o diff), el usuario que hizo el cambio y la marca de tiempo."
+		},
+		{
+			"name": "Auth Error",
+			"item": [
+				{
+					"name": "401 AccessWithoutToken",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:AccessWithoutToken(401)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/products",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 19:12:51 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"No autenticado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "403 Unauthorized",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTcwMjg5LCJleHAiOjE3ODM5NzM4ODksIm5iZiI6MTc4Mzk3MDI4OSwianRpIjoiblU0THFjVmZQRVY4Y21XWCIsInN1YiI6IjZhNTEzMjk3Y2MzYmE1MWE3ODBkMDE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.dThGBABgPgpjAxGmX4uKL89VHizrMC7rPog565ILCcc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/products",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ejemplo:403 Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTcwMjg5LCJleHAiOjE3ODM5NzM4ODksIm5iZiI6MTc4Mzk3MDI4OSwianRpIjoiblU0THFjVmZQRVY4Y21XWCIsInN1YiI6IjZhNTEzMjk3Y2MzYmE1MWE3ODBkMDE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.dThGBABgPgpjAxGmX4uKL89VHizrMC7rPog565ILCcc",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/products",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.32"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 13 Jul 2026 19:19:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://localhost:4200"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"No tienes perfiles asignados\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Ejemplos de respuestas de error representativas del sistema: `401` (sin token o token expirado), `403` (usuario autenticado sin acceso a la sección solicitada), `422` (validación fallida, ej. email duplicado o precio con más de 3 dígitos), `404` (recurso no encontrado). Estos casos demuestran el manejo centralizado de excepciones configurado en `bootstrap/app.php`."
 		}
 	]
 }
