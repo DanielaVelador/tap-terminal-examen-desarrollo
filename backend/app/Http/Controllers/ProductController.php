@@ -6,6 +6,9 @@ use App\Models\Counter;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Exports\ProductsExport;
+use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ProductController extends Controller
 {
@@ -84,5 +87,18 @@ class ProductController extends Controller
         $product->delete();
 
         return response()->json(['message' => 'Producto eliminado correctamente']);
+    }
+    public function exportPdf()
+    {
+        $products = Product::orderBy('created_at', 'desc')->get();
+
+        $pdf = Pdf::loadView('exports.products-pdf', compact('products'));
+
+        return $pdf->download('productos.pdf');
+    }
+
+    public function exportExcel()
+    {
+        return Excel::download(new ProductsExport(), 'productos.xlsx');
     }
 }

@@ -13,6 +13,8 @@ Route::middleware('auth:api')->group(function () {
     Route::get('/me', [AuthController::class, 'me']);
 
     Route::middleware('section:products')->group(function () {
+        Route::get('/products/export/pdf', [ProductController::class, 'exportPdf']);
+        Route::get('/products/export/excel', [ProductController::class, 'exportExcel']);
         Route::apiResource('products', ProductController::class);
     });
 });
