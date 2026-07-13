@@ -1,0 +1,296 @@
+{
+	"info": {
+		"_postman_id": "0b6e662b-796a-4fd8-b56a-532cc32d9b1c",
+		"name": "TAP Terminal - Examen Desarrollo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "56578305",
+		"_collection_link": "https://ldaniela-veladorj-9630413.postman.co/workspace/Daniela-Velador's-Workspace~2ff36d3f-14d9-44ba-8b7d-ce7371ab41c8/collection/56578305-0b6e662b-796a-4fd8-b56a-532cc32d9b1c?action=share&source=collection_link&creator=56578305"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8000/api/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@test.com\",\r\n    \"password\": \"EauJB20z9s\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/profiles",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTEwNDczLCJleHAiOjE3ODM5MTQwNzMsIm5iZiI6MTc4MzkxMDQ3MywianRpIjoiVHFyMTg4MUdCRzhtRDFuUyIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.uzT7JEcRPl2NQBgvcnPWjlHHaTBaetlIXXlGdAsjA70",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Vendedor\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/profiles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/users",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTEwNDczLCJleHAiOjE3ODM5MTQwNzMsIm5iZiI6MTc4MzkxMDQ3MywianRpIjoiVHFyMTg4MUdCRzhtRDFuUyIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.uzT7JEcRPl2NQBgvcnPWjlHHaTBaetlIXXlGdAsjA70",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Daniela Velador",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "ldaniela.veladorj@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "+523141027692",
+							"type": "text"
+						},
+						{
+							"key": "profile_photo",
+							"type": "file",
+							"src": "/C:/Users/ldani/OneDrive/Imágenes/78c2417a-883e-4232-b97b-4ecb121a429c.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/users/export/pdf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTEwNDczLCJleHAiOjE3ODM5MTQwNzMsIm5iZiI6MTc4MzkxMDQ3MywianRpIjoiVHFyMTg4MUdCRzhtRDFuUyIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.uzT7JEcRPl2NQBgvcnPWjlHHaTBaetlIXXlGdAsjA70",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "Test Telefono",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "duplicado@test.com",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "+523141027692",
+							"type": "text"
+						},
+						{
+							"key": "profile_photo",
+							"type": "file",
+							"src": "/C:/Users/ldani/OneDrive/Imágenes/Ewha Womans University.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/users/export/pdf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"export",
+						"pdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/users/export/excel",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>No Data Available</th>\r",
+							"    </tr>\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return {}; // No data to visualize\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTEwNDczLCJleHAiOjE3ODM5MTQwNzMsIm5iZiI6MTc4MzkxMDQ3MywianRpIjoiVHFyMTg4MUdCRzhtRDFuUyIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.uzT7JEcRPl2NQBgvcnPWjlHHaTBaetlIXXlGdAsjA70",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/users/export/excel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"export",
+						"excel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/products/6a54778e3c4cf4ed010e06e3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzgzOTIwMTIzLCJleHAiOjE3ODM5MjM3MjMsIm5iZiI6MTc4MzkyMDEyMywianRpIjoiRmV6dWJvWG1aWmZ1MEdSMSIsInN1YiI6IjZhNTExYWViMjhjNGJkNThhZDBlODE3MiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.oebqFypSf3j6PtbTrDPndqLVlXj5dmufZbcevwKvNjE",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/products/6a54778e3c4cf4ed010e06e3",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products",
+						"6a54778e3c4cf4ed010e06e3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
