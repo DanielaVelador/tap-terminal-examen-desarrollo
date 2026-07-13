@@ -21,10 +21,14 @@ Route::middleware('auth:api')->group(function () {
     });
 
     Route::middleware('section:users')->group(function () {
+        Route::get('/users/export/pdf', [UserController::class, 'exportPdf']);
+        Route::get('/users/export/excel', [UserController::class, 'exportExcel']);
         Route::apiResource('users', UserController::class);
     });
 
     Route::middleware('section:profiles')->group(function () {
+        Route::get('/profiles/export/pdf', [ProfileController::class, 'exportPdf']);
+        Route::get('/profiles/export/excel', [ProfileController::class, 'exportExcel']);
         Route::apiResource('profiles', ProfileController::class);
     });
 });

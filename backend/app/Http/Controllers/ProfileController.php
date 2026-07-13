@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Profile;
 use App\Models\Section;
 use App\Models\Counter;
+use App\Exports\ProfilesExport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ProfileController extends Controller
 {
@@ -89,5 +92,18 @@ class ProfileController extends Controller
         $profile->delete();
 
         return response()->json(['message' => 'Perfil eliminado correctamente']);
+    }
+    public function exportPdf()
+    {
+        $profiles = Profile::orderBy('created_at', 'desc')->get();
+
+        $pdf = Pdf::loadView('exports.profiles-pdf', compact('profiles'));
+
+        return $pdf->download('perfiles.pdf');
+    }
+
+    public function exportExcel()
+    {
+        return Excel::download(new ProfilesExport(), 'perfiles.xlsx');
     }
 }

@@ -5,10 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Profile;
 use App\Models\Counter;
+use App\Exports\UsersExport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 use libphonenumber\PhoneNumberUtil;
+use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class UserController extends Controller
 {
@@ -133,5 +136,18 @@ class UserController extends Controller
         } catch (\Exception $e) {
             return false;
         }
+    }
+    public function exportPdf()
+    {
+        $users = User::orderBy('created_at', 'desc')->get();
+
+        $pdf = Pdf::loadView('exports.users-pdf', compact('users'));
+
+        return $pdf->download('usuarios.pdf');
+    }
+
+    public function exportExcel()
+    {
+        return Excel::download(new UsersExport(), 'usuarios.xlsx');
     }
 }
