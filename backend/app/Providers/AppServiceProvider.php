@@ -3,6 +3,11 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Models\Product;
+use App\Models\User;
+use App\Models\Profile;
+use App\Models\Section;
+use App\Observers\AuditObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +24,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Product::observe(AuditObserver::class);
+        User::observe(AuditObserver::class);
+        Profile::observe(AuditObserver::class);
+        Section::observe(AuditObserver::class);
     }
 }
