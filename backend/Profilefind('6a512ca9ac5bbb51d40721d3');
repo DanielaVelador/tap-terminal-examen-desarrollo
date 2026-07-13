@@ -1,0 +1,51 @@
+[90m= [39m[34;4mIlluminate\Database\Eloquent\Collection[39;24m {#8148
+    [34mall[39m: [
+      [34;4mApp\Models\Profile[39;24m {#8147
+        [34mname[39m: [32m"[39m[32mAdministrador[39m[32m"[39m,
+        [34msection_ids[39m: [
+          [32m"[39m[32m6a5128fde24b3ca5a6016802[39m[32m"[39m,
+          [32m"[39m[32m6a5128fde24b3ca5a6016803[39m[32m"[39m,
+          [32m"[39m[32m6a5128fde24b3ca5a6016804[39m[32m"[39m,
+        ],
+        [34mupdated_at[39m: [34;4mIlluminate\Support\Carbon @1783910037[39;24m {#8122
+          [34mdate[39m: [36m2026-07-13 02:33:57.913 UTC (+00:00)[39m,
+        },
+        [34mcreated_at[39m: [34;4mIlluminate\Support\Carbon @1783704372[39;24m {#8117
+          [34mdate[39m: [36m2026-07-10 17:26:12.555 UTC (+00:00)[39m,
+        },
+        [34mid[39m: [34;4mMongoDB\BSON\ObjectId[39;24m {#8120
+          +"[1moid[22m": [32m"[39m[32m6a512b3400e49f6fa10f72b2[39m[32m"[39m,
+        },
+      },
+      [34;4mApp\Models\Profile[39;24m {#8146
+        [34mname[39m: [32m"[39m[32mAdministrador[39m[32m"[39m,
+        [34msection_ids[39m: [
+          [36mnull[39m,
+        ],
+        [34mupdated_at[39m: [34;4mIlluminate\Support\Carbon @1783704699[39;24m {#8123
+          [34mdate[39m: [36m2026-07-10 17:31:39.941 UTC (+00:00)[39m,
+        },
+        [34mcreated_at[39m: [34;4mIlluminate\Support\Carbon @1783704699[39;24m {#8130
+          [34mdate[39m: [36m2026-07-10 17:31:39.941 UTC (+00:00)[39m,
+        },
+        [34mid[39m: [34;4mMongoDB\BSON\ObjectId[39;24m {#8164
+          +"[1moid[22m": [32m"[39m[32m6a512c7b9f451b6a330721d2[39m[32m"[39m,
+        },
+      },
+      [34;4mApp\Models\Profile[39;24m {#8145
+        [34mname[39m: [32m"[39m[32mAdministrador[39m[32m"[39m,
+        [34msection_ids[39m: [
+          [32m"[39m[32m6a5128fde24b3ca5a6016802[39m[32m"[39m,
+        ],
+        [34mupdated_at[39m: [34;4mIlluminate\Support\Carbon @1783704745[39;24m {#8179
+          [34mdate[39m: [36m2026-07-10 17:32:25.358 UTC (+00:00)[39m,
+        },
+        [34mcreated_at[39m: [34;4mIlluminate\Support\Carbon @1783704745[39;24m {#8129
+          [34mdate[39m: [36m2026-07-10 17:32:25.358 UTC (+00:00)[39m,
+        },
+        [34mid[39m: [34;4mMongoDB\BSON\ObjectId[39;24m {#8153
+          +"[1moid[22m": [32m"[39m[32m6a512ca9ac5bbb51d40721d3[39m[32m"[39m,
+        },
+      },
+    ],
+  }

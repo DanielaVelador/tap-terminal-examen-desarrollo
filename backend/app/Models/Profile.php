@@ -11,6 +11,7 @@ class Profile extends Model
     protected $collection = 'profiles';
 
     protected $fillable = [
+        'code',
         'name',
         'section_ids',
         'created_at',

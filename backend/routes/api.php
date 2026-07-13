@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [AuthController::class, 'login']);
@@ -16,5 +18,13 @@ Route::middleware('auth:api')->group(function () {
         Route::get('/products/export/pdf', [ProductController::class, 'exportPdf']);
         Route::get('/products/export/excel', [ProductController::class, 'exportExcel']);
         Route::apiResource('products', ProductController::class);
+    });
+
+    Route::middleware('section:users')->group(function () {
+        Route::apiResource('users', UserController::class);
+    });
+
+    Route::middleware('section:profiles')->group(function () {
+        Route::apiResource('profiles', ProfileController::class);
     });
 });
