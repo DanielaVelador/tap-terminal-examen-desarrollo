@@ -48,19 +48,19 @@ class ProductTest extends TestCase
     {
         [$user, $token] = $this->createUserWithSectionAccess();
 
-    $response = $this->withHeader('Authorization', "Bearer {$token}")
-        ->postJson('/api/products', [
-            'name' => 'Producto de prueba',
-            'brand' => 'Marca X',
-            'price' => 100,
-        ]);
+        $response = $this->withHeader('Authorization', "Bearer {$token}")
+            ->postJson('/api/products', [
+                'name' => 'Producto de prueba',
+                'brand' => 'Marca X',
+                'price' => 100,
+            ]);
 
-    $response->assertStatus(201)
-        ->assertJsonFragment([
-            'name' => 'Producto de prueba',
-            'brand' => 'Marca X',
-            'price' => 100,
-        ]);
+        $response->assertStatus(201)
+            ->assertJsonFragment([
+                'name' => 'Producto de prueba',
+                'brand' => 'Marca X',
+                'price' => 100,
+            ]);
     }
 
     public function test_no_crea_un_producto_sin_nombre()
