@@ -40,4 +40,15 @@ export class DashboardComponent {
     this.authService.clearToken();
     this.router.navigate(['/login']);
   }
+  get canSeeProducts(): boolean {
+    return this.authService.hasSection('products');
+  }
+
+  get canSeeUsers(): boolean {
+    return this.authService.hasSection('users');
+  }
+
+  get canSeeProfiles(): boolean {
+    return this.authService.hasSection('profiles');
+  }
 }

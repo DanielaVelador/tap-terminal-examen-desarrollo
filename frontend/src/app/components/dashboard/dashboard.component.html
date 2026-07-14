@@ -7,15 +7,21 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav mode="side" opened class="sidenav">
     <mat-nav-list>
-      <a mat-list-item routerLink="/products" routerLinkActive="active-link">
-        Productos
-      </a>
-      <a mat-list-item routerLink="/users" routerLinkActive="active-link">
-        Usuarios
-      </a>
-      <a mat-list-item routerLink="/profiles" routerLinkActive="active-link">
-        Perfiles
-      </a>
+      @if (canSeeProducts) {
+        <a mat-list-item routerLink="/products" routerLinkActive="active-link">
+          Productos
+        </a>
+      }
+      @if (canSeeUsers) {
+        <a mat-list-item routerLink="/users" routerLinkActive="active-link">
+          Usuarios
+        </a>
+      }
+      @if (canSeeProfiles) {
+        <a mat-list-item routerLink="/profiles" routerLinkActive="active-link">
+          Perfiles
+        </a>
+      }
     </mat-nav-list>
   </mat-sidenav>
 

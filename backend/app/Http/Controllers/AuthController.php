@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Profile;
+use App\Models\Section;
 use App\Mail\PasswordResetMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -72,5 +74,17 @@ class AuthController extends Controller
         Mail::to($user->email)->send(new PasswordResetMail($newPassword, $user->name));
 
         return response()->json(['message' => 'Se ha enviado una nueva contraseña a tu correo']);
+    }
+    public function mySections()
+    {
+        $user = Auth::guard('api')->user();
+
+        $profiles = Profile::whereIn('_id', $user->profile_ids ?? [])->get();
+
+        $sectionIds = $profiles->pluck('section_ids')->flatten()->unique()->filter()->values();
+
+        $sections = Section::whereIn('_id', $sectionIds)->get(['route']);
+
+        return response()->json($sections->pluck('route'));
     }
 }

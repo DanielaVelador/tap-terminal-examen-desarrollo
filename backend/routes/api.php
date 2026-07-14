@@ -16,6 +16,7 @@ Route::middleware('auth:api')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/me', [AuthController::class, 'me']);
     Route::get('/sections', [SectionController::class, 'index']);
+    Route::get('/me/sections', [AuthController::class, 'mySections']);
     Route::get('/logs', [LogController::class, 'index']);
 
     Route::middleware('section:products')->group(function () {
