@@ -25,8 +25,8 @@ jobs:
 
     env:
       DB_CONNECTION: mongodb
-      MONGODB_URI: mongodb://127.0.0.1:27017
-      MONGODB_DATABASE: tap_test
+      DB_URI: mongodb://127.0.0.1:27017
+      DB_DATABASE: tap_test
 
     steps:
       - name: Checkout repository
@@ -48,8 +48,8 @@ jobs:
       - name: Configure MongoDB
         run: |
           echo "DB_CONNECTION=mongodb" >> .env
-          echo "DB_URI=mongodb://mongodb:27017" >> .env
-          echo "DB_DATABASE=tap_db" >> .env
+          echo "DB_URI=mongodb://127.0.0.1:27017" >> .env
+          echo "DB_DATABASE=tap_test" >> .env
 
       - name: Generate application key
         run: php artisan key:generate
