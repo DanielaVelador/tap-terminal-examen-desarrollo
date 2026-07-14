@@ -1,0 +1,31 @@
+@if (detail) {
+  <mat-card class="detail-card">
+    <mat-card-header>
+      <mat-card-title>{{ detail.user }}</mat-card-title>
+      <mat-card-subtitle>{{ detail.email }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      @if (photoUrl) {
+        <img [src]="photoUrl" alt="Foto de perfil" class="profile-photo" />
+      }
+
+      <p><strong>Teléfono:</strong> {{ detail.phone || 'No registrado' }}</p>
+
+      <h3>Perfiles asignados</h3>
+      @if (detail.profiles?.length) {
+        <mat-chip-set>
+          @for (profile of detail.profiles; track profile.id) {
+            <mat-chip>{{ profile.name }}</mat-chip>
+          }
+        </mat-chip-set>
+      } @else {
+        <p>No tiene perfiles asignados</p>
+      }
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-stroked-button (click)="back()">Volver</button>
+    </mat-card-actions>
+  </mat-card>
+}

@@ -1,0 +1,46 @@
+.form-card {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.photo-section {
+  margin: 16px 0;
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .required {
+    color: #f44336;
+  }
+
+  .current-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .file-name {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 8px;
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}
