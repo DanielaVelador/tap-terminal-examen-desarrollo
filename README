@@ -1,0 +1,165 @@
+# HelpDesk API & Dashboard
+
+Proyecto desarrollado como examen técnico.
+
+## Tecnologías
+
+### Backend
+
+- Laravel 12
+- MongoDB
+- JWT Authentication
+- PHPUnit
+- Laravel Pint
+
+### Frontend
+
+- Angular 21
+- Angular Material
+- RxJS
+
+---
+
+# Requisitos
+
+- Docker
+- Docker Compose
+- Git
+
+---
+
+# Instalación
+
+## 1. Clonar el proyecto
+
+```bash
+git clone <url-del-repositorio>
+```
+
+Entrar al proyecto.
+
+```bash
+cd proyecto-tap
+```
+
+---
+
+## 2. Levantar Docker
+
+```bash
+docker compose up -d --build
+```
+
+---
+
+## 3. Backend
+
+Entrar al contenedor.
+
+```bash
+docker exec -it tap_backend bash
+```
+
+Instalar dependencias.
+
+```bash
+composer install
+```
+
+Copiar variables.
+
+```bash
+cp .env.example .env
+```
+
+Generar APP_KEY.
+
+```bash
+php artisan key:generate
+```
+
+---
+
+## 4. Frontend
+
+Entrar al contenedor.
+
+```bash
+docker exec -it tap_frontend bash
+```
+
+Instalar dependencias.
+
+```bash
+npm install
+```
+
+Iniciar Angular.
+
+```bash
+npm start
+```
+
+---
+
+# Ejecutar pruebas
+
+```bash
+php artisan test
+```
+
+---
+
+# Verificar formato
+
+```bash
+./vendor/bin/pint --test
+```
+
+---
+
+# Pipeline CI
+
+Cada Push ejecuta automáticamente:
+
+- Laravel Pint
+- PHPUnit
+
+mediante GitHub Actions.
+
+---
+
+# Variables de entorno
+
+Backend (.env)
+
+```env
+APP_NAME=
+APP_KEY=
+DB_CONNECTION=
+DB_URI=
+DB_DATABASE=
+JWT_SECRET=
+```
+
+Frontend
+
+```env
+API_URL=http://localhost:8000/api
+```
+
+---
+
+# Capturas
+
+Login
+
+CRUD Usuarios
+
+CRUD Productos
+
+CRUD Perfiles
+
+Pruebas PHPUnit
+
+GitHub Actions

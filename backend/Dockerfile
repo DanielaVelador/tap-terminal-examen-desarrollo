@@ -1,8 +1,7 @@
 FROM php:8.2-cli
 
-# Dependencias del sistema y extensiones PHP necesarias
 RUN apt-get update && apt-get install -y \
-        git curl zip unzip libzip-dev libpng-dev libonig-dev libxml2-dev libssl-dev \
+    git curl zip unzip libzip-dev libpng-dev libonig-dev libxml2-dev libssl-dev \
     && docker-php-ext-install pdo mbstring zip exif pcntl gd \
     && pecl install mongodb \
     && docker-php-ext-enable mongodb \
@@ -11,6 +10,10 @@ RUN apt-get update && apt-get install -y \
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
+
+COPY . .
+
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
 EXPOSE 8000
 
