@@ -7,6 +7,9 @@ import { authGuard } from './guards/auth.guard';
 import { UserListComponent } from './components/users/user-list/user-list.component';
 import { UserFormComponent } from './components/users/user-form/user-form.component';
 import { UserDetailComponent } from './components/users/user-detail/user-detail.component';
+import { ProfileListComponent } from './components/profiles/profile-list/profile-list.component';
+import { ProfileFormComponent } from './components/profiles/profile-form/profile-form.component';
+import { ProfileDetailComponent } from './components/profiles/profile-detail/profile-detail.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -23,6 +26,10 @@ export const routes: Routes = [
       { path: 'users/new', component: UserFormComponent },
       { path: 'users/edit/:id', component: UserFormComponent },
       { path: 'users/detail/:id', component: UserDetailComponent },
+      { path: 'profiles', component: ProfileListComponent },
+      { path: 'profiles/new', component: ProfileFormComponent },
+      { path: 'profiles/edit/:id', component: ProfileFormComponent },
+      { path: 'profiles/detail/:id', component: ProfileDetailComponent },
     ],
   },
   { path: '**', redirectTo: '/login' },
