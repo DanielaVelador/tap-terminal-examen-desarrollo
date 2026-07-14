@@ -8,8 +8,10 @@ use App\Http\Controllers\LogController;
 use App\Http\Controllers\SectionController;
 use Illuminate\Support\Facades\Route;
 
-Route::post('/login', [AuthController::class, 'login']);
-Route::post('/password/forgot', [AuthController::class, 'forgotPassword']);
+Route::post('/login', [AuthController::class, 'login'])
+    ->middleware('throttle:5,1');
+Route::post('/password/forgot', [AuthController::class, 'forgotPassword'])
+    ->middleware('throttle:3,1');
 
 Route::middleware('auth:api')->group(function () {
 

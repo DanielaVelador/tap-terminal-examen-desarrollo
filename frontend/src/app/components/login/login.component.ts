@@ -55,10 +55,14 @@ export class LoginComponent {
       },
       error: (err) => {
         this.loading = false;
-        const message =
-          err.status === 401
-            ? 'Credenciales inválidas'
-            : 'Ocurrió un error al iniciar sesión';
+        let message = 'Ocurrió un error al iniciar sesión';
+
+        if (err.status === 401) {
+          message = 'Credenciales inválidas';
+        } else if (err.status === 429) {
+          message = 'Demasiados intentos. Intenta de nuevo en un minuto.';
+        }
+
         this.snackBar.open(message, 'Cerrar', { duration: 4000 });
       },
     });
