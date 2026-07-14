@@ -1,0 +1,48 @@
+<div class="header">
+  <h2>Productos</h2>
+  <div class="actions">
+    <button mat-stroked-button (click)="exportPdf()">Exportar PDF</button>
+    <button mat-stroked-button (click)="exportExcel()">Exportar Excel</button>
+    <button mat-raised-button color="primary" (click)="create()">+ Nuevo producto</button>
+  </div>
+</div>
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z2 full-width">
+  <ng-container matColumnDef="code">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Código</th>
+    <td mat-cell *matCellDef="let product">{{ product.code }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+    <td mat-cell *matCellDef="let product">{{ product.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="brand">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Marca</th>
+    <td mat-cell *matCellDef="let product">{{ product.brand }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Precio</th>
+    <td mat-cell *matCellDef="let product">${{ product.price }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="created_at">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha de creación</th>
+    <td mat-cell *matCellDef="let product">{{ product.created_at | date: 'dd/MM/yyyy HH:mm' }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Acciones</th>
+    <td mat-cell *matCellDef="let product">
+      <button mat-icon-button (click)="edit(product.id)" title="Editar">✏️</button>
+      <button mat-icon-button (click)="delete(product.id)" title="Eliminar">🗑️</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>

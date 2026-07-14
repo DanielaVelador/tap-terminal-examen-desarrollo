@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <span>TAP Terminal</span>
+  <span class="spacer"></span>
+  <button mat-button (click)="logout()">Cerrar sesión</button>
+</mat-toolbar>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" opened class="sidenav">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/products" routerLinkActive="active-link">
+        Productos
+      </a>
+      <a mat-list-item routerLink="/users" routerLinkActive="active-link">
+        Usuarios
+      </a>
+      <a mat-list-item routerLink="/profiles" routerLinkActive="active-link">
+        Perfiles
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
